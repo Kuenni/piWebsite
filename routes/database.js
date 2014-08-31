@@ -13,6 +13,10 @@ function createResultTableIfNotExist(){
 	db.query('CREATE TABLE if not exists Ergebnisse (Spieltag int,Heim varchar(255),Gast varchar(255),ToreHeim int,ToreGast int)');
 };
 
+function createUserTippIfNotExists(){
+	db.query('CREATE TABLE if not exists UserTipps (Spieltag int,User varchar(255),Heim varchar(255),Gast varchar(255),ToreHeim int,ToreGast int)');
+}
+
 router.post('/',function(req,res){
 	createResultTableIfNotExist();
 	var tableData = req.body.tableData;
