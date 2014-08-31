@@ -26,25 +26,6 @@ angular.module('app', []).controller('spieltage', [ '$scope', function($scope) {
 		$scope.selectItem = j[0];
 		$scope.$apply();
 	});
-} ]).controller('dbTest', [ '$scope', function($scope) {
-	$scope.fillTable = function(){
-		$.ajax ({
-		    url: 'database',
-		    type: "POST",
-		    contentType: "application/json; charset=utf-8",
-		    dataType: "json",
-		    data: '{id:1,name:"test"}',
-		    success: function(){
-		    	console.log('Post successful');
-		        //
-		    },
-		    error: function(data){
-		        alert("fail");
-
-		        }
-		});
-	};
-
 } ]).controller('ergebnisseEintragen', [ '$scope','$http', function($scope,$http) {
 	$.get('/spieltage',function(j){
 		$scope.spieltageJson = j;
