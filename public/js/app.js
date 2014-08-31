@@ -105,7 +105,9 @@ angular.module('app', []).controller('spieltage', [ '$scope','$http', function($
 		    data: JSON.stringify(tableData),
 		    success: function(){
 		    	console.log('Post successful');
-		        //
+		    },
+		    error: function(){
+		    	alert('Datenbankeintrag fehlgeschlagen!');
 		    }
 		});
 	};

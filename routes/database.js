@@ -31,22 +31,28 @@ router.post('/usertipp',function(req,res){
 	},function(err,rows){
 		if(err){
 			console.log(err);
+			return res.status(500).end();
 		}
 		res.send(rows);
+		res.end();
 	});
 });
 
 router.post('/usertipp/create',function(req,res){
 	createUserTippTableIfNotExists();
 	var userTipps = req.body;
+	var errCondition = false;
 	userTipps.forEach(function(Spiel){
 		db.query('SELECT * FROM UserTipps WHERE Spieltag=:Spieltag AND User=:User AND Heim=:Heim;',{
 			Spieltag:Spiel.Spieltag,
 			User:Spiel.User,
 			Heim:Spiel.Heim
 		},function(err,rows){
-			if(err)
+			if(err){
+				errCondition = true;
 				console.log(err);
+				return;
+			}
 			if(rows && rows[0]){
 				db.query('UPDATE UserTipps SET ToreHeim=:ToreHeim WHERE Spieltag=:Spieltag AND User=:User AND Heim=:Heim',{
 					ToreHeim:Spiel.ToreHeim,
@@ -73,16 +79,25 @@ router.post('/usertipp/create',function(req,res){
 			}
 		});
 	});
+	if(errCondition){
+		res.status(500).end();
+	} else{
+		res.send({result:"success"});
+		res.end();
+	}
 });
 
 router.post('/',function(req,res){
+	var errCondition = false;
 	createResultTableIfNotExist();
 	var tableData = req.body.tableData;
 	tableData.forEach(function(Spiel){
 		var query = util.format('SELECT * FROM Ergebnisse WHERE Spieltag=%d AND Heim="%s";',Spiel.Tag,Spiel.Heim);
 		db.query(query,function(err,rows){
-			if(err)
+			if(err){
 				console.log(err);
+				errCondition = true;
+			}
 			if(rows && rows[0]){
 				db.query('UPDATE Ergebnisse SET ToreHeim=:ToreHeim WHERE Spieltag=:Spieltag AND Heim=:Heim',{
 					ToreHeim:Spiel.ToreHeim,
@@ -106,6 +121,13 @@ router.post('/',function(req,res){
 			}
 		});
 	});
+	if(errCondition){
+		res.status(500).end();
+	} else{
+		res.send({result:"success"});
+		res.end();
+	}
+	
 });
 
 router.post('/spieltag',function(req,res){
@@ -119,6 +141,7 @@ router.post('/spieltag',function(req,res){
 	},function(err,rows){
 		if(err){
 			console.log(err);
+			return res.status(500).end();
 		}
 		res.send(rows);
 	});
