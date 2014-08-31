@@ -5,9 +5,18 @@
     <script src="/js/jquery.min.js"></script>
     <script src="/js/angular.min.js"></script>
     <script src="/js/app.js"></script>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
 
   </head>
-	<div align="center" ng-controller="ergebnisseEintragen">
+  <body>
+    	<div id="nav">
+  		<ul>
+  			<li><a href="/">&Uuml;bersicht</a></li>
+  			<li><a href="/">Tippen</a></li>
+  			<li><a href="ergebnisse">Ergebnisse</a></li>
+  		</ul>
+  	</div>
+	<div id='content' align="center" ng-controller="ergebnisseEintragen">
 						Spieltag:<br>
 						<select ng-model="selectItem"
 						ng-options="(spieltag.SpieltagNr + '. Spieltag') for spieltag in spieltageJson"

@@ -55,8 +55,8 @@ table,th,td{
 }
 
 tr:nth-child(even) {
-    background-color: #9ACD32;
+    background-color: #BCEE54;
 }
 tr:nth-child(odd) {
-    background-color: #ADFF2F;
+    background-color: #CDFF3F;
 }
