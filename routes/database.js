@@ -13,9 +13,67 @@ function createResultTableIfNotExist(){
 	db.query('CREATE TABLE if not exists Ergebnisse (Spieltag int,Heim varchar(255),Gast varchar(255),ToreHeim int,ToreGast int)');
 };
 
-function createUserTippIfNotExists(){
+function createUserTippTableIfNotExists(){
 	db.query('CREATE TABLE if not exists UserTipps (Spieltag int,User varchar(255),Heim varchar(255),Gast varchar(255),ToreHeim int,ToreGast int)');
 }
+
+router.post('/usertipp',function(req,res){
+	createUserTippTableIfNotExists();
+	var spieltag = req.body.spieltag;
+	var user = req.body.user;
+	db.query('SELECT * FROM UserTipps WHERE Spieltag=:Tag AND User=:User',{Tag:spieltag,User:user},{
+		Spieltag:Number,
+		User:String,
+		Heim:String,
+		Gast:String,
+		ToreHeim:Number,
+		ToreGast:Number
+	},function(err,rows){
+		if(err){
+			console.log(err);
+		}
+		res.send(rows);
+	});
+});
+
+router.post('/usertipp/create',function(req,res){
+	createUserTippTableIfNotExists();
+	var userTipps = req.body;
+	userTipps.forEach(function(Spiel){
+		db.query('SELECT * FROM UserTipps WHERE Spieltag=:Spieltag AND User=:User AND Heim=:Heim;',{
+			Spieltag:Spiel.Spieltag,
+			User:Spiel.User,
+			Heim:Spiel.Heim
+		},function(err,rows){
+			if(err)
+				console.log(err);
+			if(rows && rows[0]){
+				db.query('UPDATE UserTipps SET ToreHeim=:ToreHeim WHERE Spieltag=:Spieltag AND User=:User AND Heim=:Heim',{
+					ToreHeim:Spiel.ToreHeim,
+					Spieltag:Spiel.Spieltag,
+					User:Spiel.User,
+					Heim:Spiel.Heim
+				});
+				db.query('UPDATE UserTipps SET ToreGast=:ToreGast WHERE Spieltag=:Spieltag AND User=:User AND Heim=:Heim',{
+					ToreGast:Spiel.ToreGast,
+					Spieltag:Spiel.Spieltag,
+					User:Spiel.User,
+					Heim:Spiel.Heim
+				});
+			} else{
+				db.query('INSERT INTO UserTipps (Spieltag,User,Heim,Gast,ToreHeim,ToreGast) \
+						VALUES(:Tag,:User,:Heim,:Gast,:ToreHeim,:ToreGast)',{
+							Tag:Spiel.Spieltag,
+							User:Spiel.User,
+							Heim:Spiel.Heim,
+							Gast:Spiel.Gast,
+							ToreHeim:Spiel.ToreHeim,
+							ToreGast:Spiel.ToreGast
+				});
+			}
+		});
+	});
+});
 
 router.post('/',function(req,res){
 	createResultTableIfNotExist();
@@ -43,7 +101,8 @@ router.post('/',function(req,res){
 							Heim:Spiel.Heim,
 							Gast:Spiel.Gast,
 							ToreHeim:Spiel.ToreHeim,
-							ToreGast:Spiel.ToreGast});
+							ToreGast:Spiel.ToreGast
+				});
 			}
 		});
 	});

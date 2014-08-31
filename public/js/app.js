@@ -2,30 +2,61 @@
  * New node file
  */
 
-angular.module('app', []).controller('spieltage', [ '$scope', function($scope) {
-	$scope.printSelectedSpieltag = function(){
-		var tag = $scope.selectItem.SpieltagNr;
-		var spieleArray = $scope.spieltageJson[Number(tag) - 1].Spiele;
-		var userTipp = [];
-		spieleArray.forEach(function(Spiel){
-			userTipp.push({
-				Heim:Spiel.Heim,
-				Gast:Spiel.Gast,
-				toreHeim:'-',
-				toreGast:'-',
-				ergebnisHeim:'x',
-				ergebnisGast:'x'
-			});
-		});
-		$scope.userTipps = userTipp;
-	};
-	$scope.users = [{name:"Kuenni",uid:1},{name:"Waldi",uid:2}];
-	$scope.userItem = $scope.users[0];
+angular.module('app', []).controller('spieltage', [ '$scope','$http', function($scope,$http) {
 	$.get('/spieltage',function(j){
 		$scope.spieltageJson = j;
 		$scope.selectItem = j[0];
 		$scope.$apply();
 	});
+	$scope.users = [{name:"Kuenni",uid:1},{name:"Waldi",uid:2}];
+	$scope.userItem = $scope.users[0];
+	$scope.printSelectedSpieltag = function(){
+		var tag = $scope.selectItem.SpieltagNr;
+		var user = $scope.userItem.name;
+		var userTipps = [];
+		$http({
+			method:'POST',
+			url:'/database/usertipp',
+			data:{spieltag:tag,user:user}
+		}).success(function(data,status,header,config){
+			userTipps = data;
+			if(userTipps.length === 0){
+				spieleArray = $scope.spieltageJson[Number(tag) - 1].Spiele;
+				spieleArray.forEach(function(Spiel){
+					userTipps.push({
+						Heim:Spiel.Heim,
+						Gast:Spiel.Gast,
+						ToreHeim:'-1',
+						ToreGast:'-1'
+					});
+				});
+			}
+			$scope.userTipps = userTipps;
+		});
+	};
+	$scope.fillTable = function(){
+		var tag = $scope.selectItem.SpieltagNr;
+		var user = $scope.userItem.name;
+		var userTipps = [];
+		$scope.userTipps.forEach(function(Spiel){
+			userTipps.push(
+					{
+						Spieltag:tag,
+						User:user,
+						Heim:Spiel.Heim,
+						Gast:Spiel.Gast,
+						ToreHeim:Spiel.ToreHeim,
+						ToreGast:Spiel.ToreGast
+					});
+		});
+		$http({
+			method:'POST',
+			url:'/database/usertipp/create',
+			data:userTipps
+		}).success(function(data,status,header,config){
+			alert('Submit successful!');
+		});
+	};
 } ]).controller('ergebnisseEintragen', [ '$scope','$http', function($scope,$http) {
 	$.get('/spieltage',function(j){
 		$scope.spieltageJson = j;
