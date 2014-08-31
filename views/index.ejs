@@ -12,9 +12,16 @@
     
   </head>
   <body>
+  	<div id="nav">
+  		<ul>
+  			<li><a href="index">&Uuml;bersicht</a></li>
+  			<li><a href="index">Tippen</a></li>
+  			<li><a href="ergebnisse">Ergebnisse</a></li>
+  		</ul>
+  	</div>
     <h1><%= title %></h1>
     <p>Welcome to <%= title %></p>
-					<div align="center" ng-controller="spieltage">
+					<div align="center" id="content" ng-controller="spieltage">
 						Spieltag:<br>
 						<select ng-model="selectItem"
 						ng-options="(spieltag.SpieltagNr + '. Spieltag') for spieltag in spieltageJson"
@@ -24,23 +31,22 @@
 						<select ng-model='userItem'
 						ng-options="user.name for user in users"></select>
 			    	<table>
-			    		<tr><td><b>Heim</b></td><td><b>Gast</b></td><td><b>Tipp</b></td><td><b>Ergebnis</b></td></tr>
+			    		<tr>
+			    			<th><b>Heim</b></th>
+			    			<th><b>Gast</b></th>
+			    			<th><b>Tipp</b></th>
+			    		</tr>
 			    		<tr ng-repeat="t in userTipps">
 			    			<td>{{t.Heim}}</td>
 			    			<td>{{t.Gast}}</td>
-			    			<td>
+			    			<td align='center'>
 			    				<input type="text" style="width: 15px" ng-model="t.ToreHeim"/>
 			    				<b> : </b>
 			    				<input type="text" style="width: 15px" ng-model='t.ToreGast'/>
-			    			</td>
-			    				{{t.ErgebnisHeim}}
-			    				<b> : </b>
-			    				{{t.ErgebnisGast}}
 			    			</td>
 			    		</tr>
 			    	</table>
 			    	<button ng-click="fillTable()">Abschicken</button>
 			    </div>
-	<script>//makeSpieltageSelection();</script>
   </body>
 </html>
