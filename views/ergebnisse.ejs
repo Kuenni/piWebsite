@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app="app">
+  <head>
+    <title><%= title %></title>
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/angular.min.js"></script>
+    <script src="/js/app.js"></script>
+
+  </head>
+	<div align="center" ng-controller="ergebnisseEintragen">
+						Spieltag:<br>
+						<select ng-model="selectItem"
+						ng-options="(spieltag.SpieltagNr + '. Spieltag') for spieltag in spieltageJson"
+						ng-click="printSelectedSpieltag(spieltag.SpieltagNr)"></select>
+			    	<table>
+			    		<tr><td><b>Heim</b></td><td><b>Gast</b></td><td><b>Ergebnis</b></td></tr>
+			    		<tr ng-repeat="spiel in spiele">
+			    			<td>{{spiel.Heim}}</td>
+			    			<td>{{spiel.Gast}}</td>
+			    			<td>
+			    				<input type="text" style="width: 15px" ng-model="spiel.ToreHeim"/>
+			    				<b> : </b>
+			    				<input type="text" style="width: 15px" ng-model='spiel.ToreGast'/>
+			    		</tr>
+			    	</table>
+			    	<button ng-click="fillTable()">Abschicken</button>
+			    </div>
+  </body>
+</html>

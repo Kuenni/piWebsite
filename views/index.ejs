@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html ng-app="app">
+  <head>
+    <title><%= title %></title>
+    
+    <script src="js/jquery.min.js"></script>
+    <script src="js/angular.js"></script>
+    <script src="js/angular-route.js"></script>
+        <script src="js/spieltagSelection.js"></script>
+        <script src="js/app.js"></script>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+					<div align="center" ng-controller="spieltage">
+						Spieltag:<br>
+						<select ng-model="selectItem"
+						ng-options="(spieltag.SpieltagNr + '. Spieltag') for spieltag in spieltageJson"
+						ng-click="printSelectedSpieltag(spieltag.SpieltagNr)"></select>
+						<br>
+						Spieler:<br>
+						<select ng-model='userItem'
+						ng-options="user.name for user in users"></select>
+			    	<table>
+			    		<tr><td><b>Heim</b></td><td><b>Gast</b></td><td><b>Tipp</b></td><td><b>Ergebnis</b></td></tr>
+			    		<tr ng-repeat="t in userTipps">
+			    			<td>{{t.Heim}}</td>
+			    			<td>{{t.Gast}}</td>
+			    			<td>
+			    				<input type="text" style="width: 15px" ng-model="t.toreHeim"/>
+			    				<b> : </b>
+			    				<input type="text" style="width: 15px" ng-model='t.toreGast'/>
+			    			</td>
+			    				{{t.ergebnisHeim}}
+			    				<b> : </b>
+			    				{{t.ergebnisGast}}
+			    			</td>
+			    		</tr>
+			    	</table>
+			    	<button ng-click="fillTable()">Abschicken</button>
+			    </div>
+	<script>//makeSpieltageSelection();</script>
+  </body>
+</html>

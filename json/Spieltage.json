@@ -1,0 +1,1361 @@
+{"Spieltage":[
+	{
+		"SpieltagNr":"1",
+		"Spiele":[
+		{
+			"Heim":"FC Bayern Muenchen",
+			"Gast":"VfL Wolfsburg"
+		},
+		{
+			"Heim":"Borussia Dortmund",
+			"Gast":"Bayer 04 Leverkusen"
+		},
+		{
+			"Heim":"Borussia Moenchengladbach",
+			"Gast":"VfB Stuttgart"
+		},
+		{
+			"Heim":"1899 Hoffenheim",
+			"Gast":"FC Augsburg"
+		},
+		{
+			"Heim":"Hannover 96",
+			"Gast":"FC Schalke 04"
+		},
+		{
+			"Heim":"Hertha BSC",
+			"Gast":"SV Werder Bremen"
+		},
+		{
+			"Heim":"Eintracht Frankfurt",
+			"Gast":"Sport-Club Freiburg"
+		},
+		{
+			"Heim":"1. FC Koeln",
+			"Gast":"Hamburger SV"
+		},
+		{
+			"Heim":"SC Paderborn 07",
+			"Gast":"1. FSV Mainz 05"
+		}
+	]},
+	{
+		"SpieltagNr":"2",
+		"Spiele":[
+		{
+			"Heim":"FC Schalke 04",
+			"Gast":"FC Bayern Muenchen"
+		},
+		{
+			"Heim":"Bayer 04 Leverkusen",
+			"Gast":"Hertha BSC"
+		},
+		{
+			"Heim":"VfL Wolfsburg",
+			"Gast":"Eintracht Frankfurt"
+		},
+		{
+			"Heim":"1. FSV Mainz 05",
+			"Gast":"Hannover 96"
+		},
+		{
+			"Heim":"FC Augsburg",
+			"Gast":"Borussia Dortmund"
+		},
+		{
+			"Heim":"SV Werder Bremen",
+			"Gast":"1899 Hoffenheim"
+		},
+		{
+			"Heim":"Sport-Club Freiburg",
+			"Gast":"Borussia Moenchengladbach"
+		},
+		{
+			"Heim":"VfB Stuttgart",
+			"Gast":"1. FC Koeln"
+		},
+		{
+			"Heim":"Hamburger SV",
+			"Gast":"SC Paderborn 07"
+		}
+	]},
+	{
+		"SpieltagNr":"3",
+		"Spiele":[
+		{
+			"Heim":"FC Bayern Muenchen",
+			"Gast":"VfB Stuttgart"
+		},
+		{
+			"Heim":"Borussia Dortmund",
+			"Gast":"Sport-Club Freiburg"
+		},
+		{
+			"Heim":"Bayer 04 Leverkusen",
+			"Gast":"SV Werder Bremen"
+		},
+		{
+			"Heim":"Borussia Moenchengladbach",
+			"Gast":"FC Schalke 04"
+		},
+		{
+			"Heim":"1899 Hoffenheim",
+			"Gast":"VfL Wolfsburg"
+		},
+		{
+			"Heim":"Hannover 96",
+			"Gast":"Hamburger SV"
+		},
+		{
+			"Heim":"Hertha BSC",
+			"Gast":"1. FSV Mainz 05"
+		},
+		{
+			"Heim":"Eintracht Frankfurt",
+			"Gast":"FC Augsburg"
+		},
+		{
+			"Heim":"SC Paderborn 07",
+			"Gast":"1. FC Koeln"
+		}
+	]},
+	{
+		"SpieltagNr":"4",
+		"Spiele":[
+		{
+			"Heim":"FC Schalke 04",
+			"Gast":"Eintracht Frankfurt"
+		},
+		{
+			"Heim":"VfL Wolfsburg",
+			"Gast":"Bayer 04 Leverkusen"
+		},
+		{
+			"Heim":"1. FSV Mainz 05",
+			"Gast":"Borussia Dortmund"
+		},
+		{
+			"Heim":"FC Augsburg",
+			"Gast":"SV Werder Bremen"
+		},
+		{
+			"Heim":"Sport-Club Freiburg",
+			"Gast":"Hertha BSC"
+		},
+		{
+			"Heim":"VfB Stuttgart",
+			"Gast":"1899 Hoffenheim"
+		},
+		{
+			"Heim":"Hamburger SV",
+			"Gast":"FC Bayern Muenchen"
+		},
+		{
+			"Heim":"1. FC Koeln",
+			"Gast":"Borussia Moenchengladbach"
+		},
+		{
+			"Heim":"SC Paderborn 07",
+			"Gast":"Hannover 96"
+		}
+	]},
+	{
+		"SpieltagNr":"5",
+		"Spiele":[
+		{
+			"Heim":"FC Bayern Muenchen",
+			"Gast":"SC Paderborn 07"
+		},
+		{
+			"Heim":"Borussia Dortmund",
+			"Gast":"VfB Stuttgart"
+		},
+		{
+			"Heim":"Bayer 04 Leverkusen",
+			"Gast":"FC Augsburg"
+		},
+		{
+			"Heim":"Borussia Moenchengladbach",
+			"Gast":"Hamburger SV"
+		},
+		{
+			"Heim":"1899 Hoffenheim",
+			"Gast":"Sport-Club Freiburg"
+		},
+		{
+			"Heim":"Hannover 96",
+			"Gast":"1. FC Koeln"
+		},
+		{
+			"Heim":"Hertha BSC",
+			"Gast":"VfL Wolfsburg"
+		},
+		{
+			"Heim":"SV Werder Bremen",
+			"Gast":"FC Schalke 04"
+		},
+		{
+			"Heim":"Eintracht Frankfurt",
+			"Gast":"1. FSV Mainz 05"
+		}
+	]},
+	{
+		"SpieltagNr":"6",
+		"Spiele":[
+		{
+			"Heim":"FC Schalke 04",
+			"Gast":"Borussia Dortmund"
+		},
+		{
+			"Heim":"VfL Wolfsburg",
+			"Gast":"SV Werder Bremen"
+		},
+		{
+			"Heim":"1. FSV Mainz 05",
+			"Gast":"1899 Hoffenheim"
+		},
+		{
+			"Heim":"FC Augsburg",
+			"Gast":"Hertha BSC"
+		},
+		{
+			"Heim":"Sport-Club Freiburg",
+			"Gast":"Bayer 04 Leverkusen"
+		},
+		{
+			"Heim":"VfB Stuttgart",
+			"Gast":"Hannover 96"
+		},
+		{
+			"Heim":"Hamburger SV",
+			"Gast":"Eintracht Frankfurt"
+		},
+		{
+			"Heim":"1. FC Koeln",
+			"Gast":"FC Bayern Muenchen"
+		},
+		{
+			"Heim":"SC Paderborn 07",
+			"Gast":"Borussia Moenchengladbach"
+		}
+	]},
+	{
+		"SpieltagNr":"7",
+		"Spiele":[
+		{
+			"Heim":"FC Bayern Muenchen",
+			"Gast":"Hannover 96"
+		},
+		{
+			"Heim":"Borussia Dortmund",
+			"Gast":"Hamburger SV"
+		},
+		{
+			"Heim":"Bayer 04 Leverkusen",
+			"Gast":"SC Paderborn 07"
+		},
+		{
+			"Heim":"VfL Wolfsburg",
+			"Gast":"FC Augsburg"
+		},
+		{
+			"Heim":"Borussia Moenchengladbach",
+			"Gast":"1. FSV Mainz 05"
+		},
+		{
+			"Heim":"1899 Hoffenheim",
+			"Gast":"FC Schalke 04"
+		},
+		{
+			"Heim":"Hertha BSC",
+			"Gast":"VfB Stuttgart"
+		},
+		{
+			"Heim":"SV Werder Bremen",
+			"Gast":"Sport-Club Freiburg"
+		},
+		{
+			"Heim":"Eintracht Frankfurt",
+			"Gast":"1. FC Koeln"
+		}
+	]},
+	{
+		"SpieltagNr":"8",
+		"Spiele":[
+		{
+			"Heim":"FC Bayern Muenchen",
+			"Gast":"SV Werder Bremen"
+		},
+		{
+			"Heim":"FC Schalke 04",
+			"Gast":"Hertha BSC"
+		},
+		{
+			"Heim":"1. FSV Mainz 05",
+			"Gast":"FC Augsburg"
+		},
+		{
+			"Heim":"Hannover 96",
+			"Gast":"Borussia Moenchengladbach"
+		},
+		{
+			"Heim":"Sport-Club Freiburg",
+			"Gast":"VfL Wolfsburg"
+		},
+		{
+			"Heim":"VfB Stuttgart",
+			"Gast":"Bayer 04 Leverkusen"
+		},
+		{
+			"Heim":"Hamburger SV",
+			"Gast":"1899 Hoffenheim"
+		},
+		{
+			"Heim":"1. FC Koeln",
+			"Gast":"Borussia Dortmund"
+		},
+		{
+			"Heim":"SC Paderborn 07",
+			"Gast":"Eintracht Frankfurt"
+		}
+	]},
+	{
+		"SpieltagNr":"9",
+		"Spiele":[
+		{
+			"Heim":"Borussia Dortmund",
+			"Gast":"Hannover 96"
+		},
+		{
+			"Heim":"Bayer 04 Leverkusen",
+			"Gast":"FC Schalke 04"
+		},
+		{
+			"Heim":"VfL Wolfsburg",
+			"Gast":"1. FSV Mainz 05"
+		},
+		{
+			"Heim":"Borussia Moenchengladbach",
+			"Gast":"FC Bayern Muenchen"
+		},
+		{
+			"Heim":"FC Augsburg",
+			"Gast":"Sport-Club Freiburg"
+		},
+		{
+			"Heim":"1899 Hoffenheim",
+			"Gast":"SC Paderborn 07"
+		},
+		{
+			"Heim":"Hertha BSC",
+			"Gast":"Hamburger SV"
+		},
+		{
+			"Heim":"SV Werder Bremen",
+			"Gast":"1. FC Koeln"
+		},
+		{
+			"Heim":"Eintracht Frankfurt",
+			"Gast":"VfB Stuttgart"
+		}
+	]},
+	{
+		"SpieltagNr":"10",
+		"Spiele":[
+		{
+			"Heim":"FC Bayern Muenchen",
+			"Gast":"Borussia Dortmund"
+		},
+		{
+			"Heim":"FC Schalke 04",
+			"Gast":"FC Augsburg"
+		},
+		{
+			"Heim":"Borussia Moenchengladbach",
+			"Gast":"1899 Hoffenheim"
+		},
+		{
+			"Heim":"1. FSV Mainz 05",
+			"Gast":"SV Werder Bremen"
+		},
+		{
+			"Heim":"Hannover 96",
+			"Gast":"Eintracht Frankfurt"
+		},
+		{
+			"Heim":"VfB Stuttgart",
+			"Gast":"VfL Wolfsburg"
+		},
+		{
+			"Heim":"Hamburger SV",
+			"Gast":"Bayer 04 Leverkusen"
+		},
+		{
+			"Heim":"1. FC Koeln",
+			"Gast":"Sport-Club Freiburg"
+		},
+		{
+			"Heim":"SC Paderborn 07",
+			"Gast":"Hertha BSC"
+		}
+	]},
+	{
+		"SpieltagNr":"11",
+		"Spiele":[
+		{
+			"Heim":"Borussia Dortmund",
+			"Gast":"Borussia Moenchengladbach"
+		},
+		{
+			"Heim":"Bayer 04 Leverkusen",
+			"Gast":"1. FSV Mainz 05"
+		},
+		{
+			"Heim":"VfL Wolfsburg",
+			"Gast":"Hamburger SV"
+		},
+		{
+			"Heim":"FC Augsburg",
+			"Gast":"SC Paderborn 07"
+		},
+		{
+			"Heim":"1899 Hoffenheim",
+			"Gast":"1. FC Koeln"
+		},
+		{
+			"Heim":"Hertha BSC",
+			"Gast":"Hannover 96"
+		},
+		{
+			"Heim":"SV Werder Bremen",
+			"Gast":"VfB Stuttgart"
+		},
+		{
+			"Heim":"Eintracht Frankfurt",
+			"Gast":"FC Bayern Muenchen"
+		},
+		{
+			"Heim":"Sport-Club Freiburg",
+			"Gast":"FC Schalke 04"
+		}
+	]},
+	{
+		"SpieltagNr":"12",
+		"Spiele":[
+		{
+			"Heim":"FC Bayern Muenchen",
+			"Gast":"1899 Hoffenheim"
+		},
+		{
+			"Heim":"FC Schalke 04",
+			"Gast":"VfL Wolfsburg"
+		},
+		{
+			"Heim":"Borussia Moenchengladbach",
+			"Gast":"Eintracht Frankfurt"
+		},
+		{
+			"Heim":"1. FSV Mainz 05",
+			"Gast":"Sport-Club Freiburg"
+		},
+		{
+			"Heim":"Hannover 96",
+			"Gast":"Bayer 04 Leverkusen"
+		},
+		{
+			"Heim":"VfB Stuttgart",
+			"Gast":"FC Augsburg"
+		},
+		{
+			"Heim":"Hamburger SV",
+			"Gast":"SV Werder Bremen"
+		},
+		{
+			"Heim":"1. FC Koeln",
+			"Gast":"Hertha BSC"
+		},
+		{
+			"Heim":"SC Paderborn 07",
+			"Gast":"Borussia Dortmund"
+		}
+	]},
+	{
+		"SpieltagNr":"13",
+		"Spiele":[
+		{
+			"Heim":"FC Schalke 04",
+			"Gast":"1. FSV Mainz 05"
+		},
+		{
+			"Heim":"Bayer 04 Leverkusen",
+			"Gast":"1. FC Koeln"
+		},
+		{
+			"Heim":"VfL Wolfsburg",
+			"Gast":"Borussia Moenchengladbach"
+		},
+		{
+			"Heim":"FC Augsburg",
+			"Gast":"Hamburger SV"
+		},
+		{
+			"Heim":"1899 Hoffenheim",
+			"Gast":"Hannover 96"
+		},
+		{
+			"Heim":"Hertha BSC",
+			"Gast":"FC Bayern Muenchen"
+		},
+		{
+			"Heim":"SV Werder Bremen",
+			"Gast":"SC Paderborn 07"
+		},
+		{
+			"Heim":"Eintracht Frankfurt",
+			"Gast":"Borussia Dortmund"
+		},
+		{
+			"Heim":"Sport-Club Freiburg",
+			"Gast":"VfB Stuttgart"
+		}
+	]},
+	{
+		"SpieltagNr":"14",
+		"Spiele":[
+		{
+			"Heim":"FC Bayern Muenchen",
+			"Gast":"Bayer 04 Leverkusen"
+		},
+		{
+			"Heim":"Borussia Dortmund",
+			"Gast":"1899 Hoffenheim"
+		},
+		{
+			"Heim":"Borussia Moenchengladbach",
+			"Gast":"Hertha BSC"
+		},
+		{
+			"Heim":"Hannover 96",
+			"Gast":"VfL Wolfsburg"
+		},
+		{
+			"Heim":"Eintracht Frankfurt",
+			"Gast":"SV Werder Bremen"
+		},
+		{
+			"Heim":"VfB Stuttgart",
+			"Gast":"FC Schalke 04"
+		},
+		{
+			"Heim":"Hamburger SV",
+			"Gast":"1. FSV Mainz 05"
+		},
+		{
+			"Heim":"1. FC Koeln",
+			"Gast":"FC Augsburg"
+		},
+		{
+			"Heim":"SC Paderborn 07",
+			"Gast":"Sport-Club Freiburg"
+		}
+	]},
+	{
+		"SpieltagNr":"15",
+		"Spiele":[
+		{
+			"Heim":"FC Schalke 04",
+			"Gast":"1. FC Koeln"
+		},
+		{
+			"Heim":"Bayer 04 Leverkusen",
+			"Gast":"Borussia Moenchengladbach"
+		},
+		{
+			"Heim":"VfL Wolfsburg",
+			"Gast":"SC Paderborn 07"
+		},
+		{
+			"Heim":"1. FSV Mainz 05",
+			"Gast":"VfB Stuttgart"
+		},
+		{
+			"Heim":"FC Augsburg",
+			"Gast":"FC Bayern Muenchen"
+		},
+		{
+			"Heim":"1899 Hoffenheim",
+			"Gast":"Eintracht Frankfurt"
+		},
+		{
+			"Heim":"Hertha BSC",
+			"Gast":"Borussia Dortmund"
+		},
+		{
+			"Heim":"SV Werder Bremen",
+			"Gast":"Hannover 96"
+		},
+		{
+			"Heim":"Sport-Club Freiburg",
+			"Gast":"Hamburger SV"
+		}
+	]},
+	{
+		"SpieltagNr":"16",
+		"Spiele":[
+		{
+			"Heim":"FC Bayern Muenchen",
+			"Gast":"Sport-Club Freiburg"
+		},
+		{
+			"Heim":"Borussia Dortmund",
+			"Gast":"VfL Wolfsburg"
+		},
+		{
+			"Heim":"Borussia Moenchengladbach",
+			"Gast":"SV Werder Bremen"
+		},
+		{
+			"Heim":"1899 Hoffenheim",
+			"Gast":"Bayer 04 Leverkusen"
+		},
+		{
+			"Heim":"Hannover 96",
+			"Gast":"FC Augsburg"
+		},
+		{
+			"Heim":"Eintracht Frankfurt",
+			"Gast":"Hertha BSC"
+		},
+		{
+			"Heim":"Hamburger SV",
+			"Gast":"VfB Stuttgart"
+		},
+		{
+			"Heim":"1. FC Koeln",
+			"Gast":"1. FSV Mainz 05"
+		},
+		{
+			"Heim":"SC Paderborn 07",
+			"Gast":"FC Schalke 04"
+		}
+	]},
+	{
+		"SpieltagNr":"17",
+		"Spiele":[
+		{
+			"Heim":"FC Schalke 04",
+			"Gast":"Hamburger SV"
+		},
+		{
+			"Heim":"Bayer 04 Leverkusen",
+			"Gast":"Eintracht Frankfurt"
+		},
+		{
+			"Heim":"VfL Wolfsburg",
+			"Gast":"1. FC Koeln"
+		},
+		{
+			"Heim":"1. FSV Mainz 05",
+			"Gast":"FC Bayern Muenchen"
+		},
+		{
+			"Heim":"FC Augsburg",
+			"Gast":"Borussia Moenchengladbach"
+		},
+		{
+			"Heim":"Hertha BSC",
+			"Gast":"1899 Hoffenheim"
+		},
+		{
+			"Heim":"SV Werder Bremen",
+			"Gast":"Borussia Dortmund"
+		},
+		{
+			"Heim":"Sport-Club Freiburg",
+			"Gast":"Hannover 96"
+		},
+		{
+			"Heim":"VfB Stuttgart",
+			"Gast":"SC Paderborn 07"
+		}
+	]},
+	{
+		"SpieltagNr":"18",
+		"Spiele":[
+		{
+			"Heim":"FC Schalke 04",
+			"Gast":"Hannover 96"
+		},
+		{
+			"Heim":"Bayer 04 Leverkusen",
+			"Gast":"Borussia Dortmund"
+		},
+		{
+			"Heim":"VfL Wolfsburg",
+			"Gast":"FC Bayern Muenchen"
+		},
+		{
+			"Heim":"1. FSV Mainz 05",
+			"Gast":"SC Paderborn 07"
+		},
+		{
+			"Heim":"FC Augsburg",
+			"Gast":"1899 Hoffenheim"
+		},
+		{
+			"Heim":"SV Werder Bremen",
+			"Gast":"Hertha BSC"
+		},
+		{
+			"Heim":"Sport-Club Freiburg",
+			"Gast":"Eintracht Frankfurt"
+		},
+		{
+			"Heim":"VfB Stuttgart",
+			"Gast":"Borussia Moenchengladbach"
+		},
+		{
+			"Heim":"Hamburger SV",
+			"Gast":"1. FC Koeln"
+		}
+	]},
+	{
+		"SpieltagNr":"19",
+		"Spiele":[
+		{
+			"Heim":"FC Bayern Muenchen",
+			"Gast":"FC Schalke 04"
+		},
+		{
+			"Heim":"Borussia Dortmund",
+			"Gast":"FC Augsburg"
+		},
+		{
+			"Heim":"Borussia Moenchengladbach",
+			"Gast":"Sport-Club Freiburg"
+		},
+		{
+			"Heim":"1899 Hoffenheim",
+			"Gast":"SV Werder Bremen"
+		},
+		{
+			"Heim":"Hannover 96",
+			"Gast":"1. FSV Mainz 05"
+		},
+		{
+			"Heim":"Hertha BSC",
+			"Gast":"Bayer 04 Leverkusen"
+		},
+		{
+			"Heim":"Eintracht Frankfurt",
+			"Gast":"VfL Wolfsburg"
+		},
+		{
+			"Heim":"1. FC Koeln",
+			"Gast":"VfB Stuttgart"
+		},
+		{
+			"Heim":"SC Paderborn 07",
+			"Gast":"Hamburger SV"
+		}
+	]},
+	{
+		"SpieltagNr":"20",
+		"Spiele":[
+		{
+			"Heim":"FC Schalke 04",
+			"Gast":"Borussia Moenchengladbach"
+		},
+		{
+			"Heim":"VfL Wolfsburg",
+			"Gast":"1899 Hoffenheim"
+		},
+		{
+			"Heim":"1. FSV Mainz 05",
+			"Gast":"Hertha BSC"
+		},
+		{
+			"Heim":"FC Augsburg",
+			"Gast":"Eintracht Frankfurt"
+		},
+		{
+			"Heim":"SV Werder Bremen",
+			"Gast":"Bayer 04 Leverkusen"
+		},
+		{
+			"Heim":"Sport-Club Freiburg",
+			"Gast":"Borussia Dortmund"
+		},
+		{
+			"Heim":"VfB Stuttgart",
+			"Gast":"FC Bayern Muenchen"
+		},
+		{
+			"Heim":"Hamburger SV",
+			"Gast":"Hannover 96"
+		},
+		{
+			"Heim":"1. FC Koeln",
+			"Gast":"SC Paderborn 07"
+		}
+	]},
+	{
+		"SpieltagNr":"21",
+		"Spiele":[
+		{
+			"Heim":"FC Bayern Muenchen",
+			"Gast":"Hamburger SV"
+		},
+		{
+			"Heim":"Borussia Dortmund",
+			"Gast":"1. FSV Mainz 05"
+		},
+		{
+			"Heim":"Bayer 04 Leverkusen",
+			"Gast":"VfL Wolfsburg"
+		},
+		{
+			"Heim":"Borussia Moenchengladbach",
+			"Gast":"1. FC Koeln"
+		},
+		{
+			"Heim":"1899 Hoffenheim",
+			"Gast":"VfB Stuttgart"
+		},
+		{
+			"Heim":"Hannover 96",
+			"Gast":"SC Paderborn 07"
+		},
+		{
+			"Heim":"Hertha BSC",
+			"Gast":"Sport-Club Freiburg"
+		},
+		{
+			"Heim":"SV Werder Bremen",
+			"Gast":"FC Augsburg"
+		},
+		{
+			"Heim":"Eintracht Frankfurt",
+			"Gast":"FC Schalke 04"
+		}
+	]},
+	{
+		"SpieltagNr":"22",
+		"Spiele":[
+		{
+			"Heim":"FC Schalke 04",
+			"Gast":"SV Werder Bremen"
+		},
+		{
+			"Heim":"VfL Wolfsburg",
+			"Gast":"Hertha BSC"
+		},
+		{
+			"Heim":"1. FSV Mainz 05",
+			"Gast":"Eintracht Frankfurt"
+		},
+		{
+			"Heim":"FC Augsburg",
+			"Gast":"Bayer 04 Leverkusen"
+		},
+		{
+			"Heim":"Sport-Club Freiburg",
+			"Gast":"1899 Hoffenheim"
+		},
+		{
+			"Heim":"VfB Stuttgart",
+			"Gast":"Borussia Dortmund"
+		},
+		{
+			"Heim":"Hamburger SV",
+			"Gast":"Borussia Moenchengladbach"
+		},
+		{
+			"Heim":"1. FC Koeln",
+			"Gast":"Hannover 96"
+		},
+		{
+			"Heim":"SC Paderborn 07",
+			"Gast":"FC Bayern Muenchen"
+		}
+	]},
+	{
+		"SpieltagNr":"23",
+		"Spiele":[
+		{
+			"Heim":"FC Bayern Muenchen",
+			"Gast":"1. FC Koeln"
+		},
+		{
+			"Heim":"Borussia Dortmund",
+			"Gast":"FC Schalke 04"
+		},
+		{
+			"Heim":"Bayer 04 Leverkusen",
+			"Gast":"Sport-Club Freiburg"
+		},
+		{
+			"Heim":"Borussia Moenchengladbach",
+			"Gast":"SC Paderborn 07"
+		},
+		{
+			"Heim":"1899 Hoffenheim",
+			"Gast":"1. FSV Mainz 05"
+		},
+		{
+			"Heim":"Hannover 96",
+			"Gast":"VfB Stuttgart"
+		},
+		{
+			"Heim":"Hertha BSC",
+			"Gast":"FC Augsburg"
+		},
+		{
+			"Heim":"SV Werder Bremen",
+			"Gast":"VfL Wolfsburg"
+		},
+		{
+			"Heim":"Eintracht Frankfurt",
+			"Gast":"Hamburger SV"
+		}
+	]},
+	{
+		"SpieltagNr":"24",
+		"Spiele":[
+		{
+			"Heim":"FC Schalke 04",
+			"Gast":"1899 Hoffenheim"
+		},
+		{
+			"Heim":"1. FSV Mainz 05",
+			"Gast":"Borussia Moenchengladbach"
+		},
+		{
+			"Heim":"FC Augsburg",
+			"Gast":"VfL Wolfsburg"
+		},
+		{
+			"Heim":"Hannover 96",
+			"Gast":"FC Bayern Muenchen"
+		},
+		{
+			"Heim":"Sport-Club Freiburg",
+			"Gast":"SV Werder Bremen"
+		},
+		{
+			"Heim":"VfB Stuttgart",
+			"Gast":"Hertha BSC"
+		},
+		{
+			"Heim":"Hamburger SV",
+			"Gast":"Borussia Dortmund"
+		},
+		{
+			"Heim":"1. FC Koeln",
+			"Gast":"Eintracht Frankfurt"
+		},
+		{
+			"Heim":"SC Paderborn 07",
+			"Gast":"Bayer 04 Leverkusen"
+		}
+	]},
+	{
+		"SpieltagNr":"25",
+		"Spiele":[
+		{
+			"Heim":"Borussia Dortmund",
+			"Gast":"1. FC Koeln"
+		},
+		{
+			"Heim":"Bayer 04 Leverkusen",
+			"Gast":"VfB Stuttgart"
+		},
+		{
+			"Heim":"VfL Wolfsburg",
+			"Gast":"Sport-Club Freiburg"
+		},
+		{
+			"Heim":"Borussia Moenchengladbach",
+			"Gast":"Hannover 96"
+		},
+		{
+			"Heim":"FC Augsburg",
+			"Gast":"1. FSV Mainz 05"
+		},
+		{
+			"Heim":"1899 Hoffenheim",
+			"Gast":"Hamburger SV"
+		},
+		{
+			"Heim":"Hertha BSC",
+			"Gast":"FC Schalke 04"
+		},
+		{
+			"Heim":"SV Werder Bremen",
+			"Gast":"FC Bayern Muenchen"
+		},
+		{
+			"Heim":"Eintracht Frankfurt",
+			"Gast":"SC Paderborn 07"
+		}
+	]},
+	{
+		"SpieltagNr":"26",
+		"Spiele":[
+		{
+			"Heim":"FC Bayern Muenchen",
+			"Gast":"Borussia Moenchengladbach"
+		},
+		{
+			"Heim":"FC Schalke 04",
+			"Gast":"Bayer 04 Leverkusen"
+		},
+		{
+			"Heim":"1. FSV Mainz 05",
+			"Gast":"VfL Wolfsburg"
+		},
+		{
+			"Heim":"Hannover 96",
+			"Gast":"Borussia Dortmund"
+		},
+		{
+			"Heim":"Sport-Club Freiburg",
+			"Gast":"FC Augsburg"
+		},
+		{
+			"Heim":"VfB Stuttgart",
+			"Gast":"Eintracht Frankfurt"
+		},
+		{
+			"Heim":"Hamburger SV",
+			"Gast":"Hertha BSC"
+		},
+		{
+			"Heim":"1. FC Koeln",
+			"Gast":"SV Werder Bremen"
+		},
+		{
+			"Heim":"SC Paderborn 07",
+			"Gast":"1899 Hoffenheim"
+		}
+	]},
+	{
+		"SpieltagNr":"27",
+		"Spiele":[
+		{
+			"Heim":"Borussia Dortmund",
+			"Gast":"FC Bayern Muenchen"
+		},
+		{
+			"Heim":"Bayer 04 Leverkusen",
+			"Gast":"Hamburger SV"
+		},
+		{
+			"Heim":"VfL Wolfsburg",
+			"Gast":"VfB Stuttgart"
+		},
+		{
+			"Heim":"FC Augsburg",
+			"Gast":"FC Schalke 04"
+		},
+		{
+			"Heim":"1899 Hoffenheim",
+			"Gast":"Borussia Moenchengladbach"
+		},
+		{
+			"Heim":"Hertha BSC",
+			"Gast":"SC Paderborn 07"
+		},
+		{
+			"Heim":"SV Werder Bremen",
+			"Gast":"1. FSV Mainz 05"
+		},
+		{
+			"Heim":"Eintracht Frankfurt",
+			"Gast":"Hannover 96"
+		},
+		{
+			"Heim":"Sport-Club Freiburg",
+			"Gast":"1. FC Koeln"
+		}
+	]},
+	{
+		"SpieltagNr":"28",
+		"Spiele":[
+		{
+			"Heim":"FC Bayern Muenchen",
+			"Gast":"Eintracht Frankfurt"
+		},
+		{
+			"Heim":"FC Schalke 04",
+			"Gast":"Sport-Club Freiburg"
+		},
+		{
+			"Heim":"Borussia Moenchengladbach",
+			"Gast":"Borussia Dortmund"
+		},
+		{
+			"Heim":"1. FSV Mainz 05",
+			"Gast":"Bayer 04 Leverkusen"
+		},
+		{
+			"Heim":"Hannover 96",
+			"Gast":"Hertha BSC"
+		},
+		{
+			"Heim":"VfB Stuttgart",
+			"Gast":"SV Werder Bremen"
+		},
+		{
+			"Heim":"Hamburger SV",
+			"Gast":"VfL Wolfsburg"
+		},
+		{
+			"Heim":"1. FC Koeln",
+			"Gast":"1899 Hoffenheim"
+		},
+		{
+			"Heim":"SC Paderborn 07",
+			"Gast":"FC Augsburg"
+		}
+	]},
+	{
+		"SpieltagNr":"29",
+		"Spiele":[
+		{
+			"Heim":"Borussia Dortmund",
+			"Gast":"SC Paderborn 07"
+		},
+		{
+			"Heim":"Bayer 04 Leverkusen",
+			"Gast":"Hannover 96"
+		},
+		{
+			"Heim":"VfL Wolfsburg",
+			"Gast":"FC Schalke 04"
+		},
+		{
+			"Heim":"FC Augsburg",
+			"Gast":"VfB Stuttgart"
+		},
+		{
+			"Heim":"1899 Hoffenheim",
+			"Gast":"FC Bayern Muenchen"
+		},
+		{
+			"Heim":"Hertha BSC",
+			"Gast":"1. FC Koeln"
+		},
+		{
+			"Heim":"SV Werder Bremen",
+			"Gast":"Hamburger SV"
+		},
+		{
+			"Heim":"Eintracht Frankfurt",
+			"Gast":"Borussia Moenchengladbach"
+		},
+		{
+			"Heim":"Sport-Club Freiburg",
+			"Gast":"1. FSV Mainz 05"
+		}
+	]},
+	{
+		"SpieltagNr":"30",
+		"Spiele":[
+		{
+			"Heim":"FC Bayern Muenchen",
+			"Gast":"Hertha BSC"
+		},
+		{
+			"Heim":"Borussia Dortmund",
+			"Gast":"Eintracht Frankfurt"
+		},
+		{
+			"Heim":"Borussia Moenchengladbach",
+			"Gast":"VfL Wolfsburg"
+		},
+		{
+			"Heim":"1. FSV Mainz 05",
+			"Gast":"FC Schalke 04"
+		},
+		{
+			"Heim":"Hannover 96",
+			"Gast":"1899 Hoffenheim"
+		},
+		{
+			"Heim":"VfB Stuttgart",
+			"Gast":"Sport-Club Freiburg"
+		},
+		{
+			"Heim":"Hamburger SV",
+			"Gast":"FC Augsburg"
+		},
+		{
+			"Heim":"1. FC Koeln",
+			"Gast":"Bayer 04 Leverkusen"
+		},
+		{
+			"Heim":"SC Paderborn 07",
+			"Gast":"SV Werder Bremen"
+		}
+	]},
+	{
+		"SpieltagNr":"31",
+		"Spiele":[
+		{
+			"Heim":"FC Schalke 04",
+			"Gast":"VfB Stuttgart"
+		},
+		{
+			"Heim":"Bayer 04 Leverkusen",
+			"Gast":"FC Bayern Muenchen"
+		},
+		{
+			"Heim":"VfL Wolfsburg",
+			"Gast":"Hannover 96"
+		},
+		{
+			"Heim":"1. FSV Mainz 05",
+			"Gast":"Hamburger SV"
+		},
+		{
+			"Heim":"FC Augsburg",
+			"Gast":"1. FC Koeln"
+		},
+		{
+			"Heim":"1899 Hoffenheim",
+			"Gast":"Borussia Dortmund"
+		},
+		{
+			"Heim":"Hertha BSC",
+			"Gast":"Borussia Moenchengladbach"
+		},
+		{
+			"Heim":"SV Werder Bremen",
+			"Gast":"Eintracht Frankfurt"
+		},
+		{
+			"Heim":"Sport-Club Freiburg",
+			"Gast":"SC Paderborn 07"
+		}
+	]},
+	{
+		"SpieltagNr":"32",
+		"Spiele":[
+		{
+			"Heim":"FC Bayern Muenchen",
+			"Gast":"FC Augsburg"
+		},
+		{
+			"Heim":"Borussia Dortmund",
+			"Gast":"Hertha BSC"
+		},
+		{
+			"Heim":"Borussia Moenchengladbach",
+			"Gast":"Bayer 04 Leverkusen"
+		},
+		{
+			"Heim":"Hannover 96",
+			"Gast":"SV Werder Bremen"
+		},
+		{
+			"Heim":"Eintracht Frankfurt",
+			"Gast":"1899 Hoffenheim"
+		},
+		{
+			"Heim":"VfB Stuttgart",
+			"Gast":"1. FSV Mainz 05"
+		},
+		{
+			"Heim":"Hamburger SV",
+			"Gast":"Sport-Club Freiburg"
+		},
+		{
+			"Heim":"1. FC Koeln",
+			"Gast":"FC Schalke 04"
+		},
+		{
+			"Heim":"SC Paderborn 07",
+			"Gast":"VfL Wolfsburg"
+		}
+	]},
+	{
+		"SpieltagNr":"33",
+		"Spiele":[
+		{
+			"Heim":"FC Schalke 04",
+			"Gast":"SC Paderborn 07"
+		},
+		{
+			"Heim":"Bayer 04 Leverkusen",
+			"Gast":"1899 Hoffenheim"
+		},
+		{
+			"Heim":"VfL Wolfsburg",
+			"Gast":"Borussia Dortmund"
+		},
+		{
+			"Heim":"1. FSV Mainz 05",
+			"Gast":"1. FC Koeln"
+		},
+		{
+			"Heim":"FC Augsburg",
+			"Gast":"Hannover 96"
+		},
+		{
+			"Heim":"Hertha BSC",
+			"Gast":"Eintracht Frankfurt"
+		},
+		{
+			"Heim":"SV Werder Bremen",
+			"Gast":"Borussia Moenchengladbach"
+		},
+		{
+			"Heim":"Sport-Club Freiburg",
+			"Gast":"FC Bayern Muenchen"
+		},
+		{
+			"Heim":"VfB Stuttgart",
+			"Gast":"Hamburger SV"
+		}
+	]},
+	{
+		"SpieltagNr":"34",
+		"Spiele":[
+		{
+			"Heim":"FC Bayern Muenchen",
+			"Gast":"1. FSV Mainz 05"
+		},
+		{
+			"Heim":"Borussia Dortmund",
+			"Gast":"SV Werder Bremen"
+		},
+		{
+			"Heim":"Borussia Moenchengladbach",
+			"Gast":"FC Augsburg"
+		},
+		{
+			"Heim":"1899 Hoffenheim",
+			"Gast":"Hertha BSC"
+		},
+		{
+			"Heim":"Hannover 96",
+			"Gast":"Sport-Club Freiburg"
+		},
+		{
+			"Heim":"Eintracht Frankfurt",
+			"Gast":"Bayer 04 Leverkusen"
+		},
+		{
+			"Heim":"Hamburger SV",
+			"Gast":"FC Schalke 04"
+		},
+		{
+			"Heim":"1. FC Koeln",
+			"Gast":"VfL Wolfsburg"
+		},
+		{
+			"Heim":"SC Paderborn 07",
+			"Gast":"VfB Stuttgart"
+		}
+	]}]}
