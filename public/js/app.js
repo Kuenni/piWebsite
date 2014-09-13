@@ -54,7 +54,9 @@ angular.module('app', []).controller('spieltage', [ '$scope','$http', function($
 			url:'/database/usertipp/create',
 			data:userTipps
 		}).success(function(data,status,header,config){
-			alert('Submit successful!');
+			alert('Eingetragen!');
+		}).error(function(data,status,header,config){
+			alert('Datenbankeintrag fehlgeschlagen!');
 		});
 	};
 } ]).controller('ergebnisseEintragen', [ '$scope','$http', function($scope,$http) {
@@ -104,7 +106,7 @@ angular.module('app', []).controller('spieltage', [ '$scope','$http', function($
 		    dataType: "json",
 		    data: JSON.stringify(tableData),
 		    success: function(){
-		    	console.log('Post successful');
+		    	alert("Eingetragen!");
 		    },
 		    error: function(){
 		    	alert('Datenbankeintrag fehlgeschlagen!');
