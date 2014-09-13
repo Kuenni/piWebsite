@@ -40,6 +40,10 @@ body {
       background-color: #ff0;
 }
 
+#centerdData{
+	text-align: center;
+}
+
 table{
 	border-collapse: collapse;
 	width: 500px;
