@@ -169,11 +169,9 @@ router.get('/ranking',function(req,res){
 			console.log('Error creating Ranking!');
 			res.status(500).end();
 		}
-		console.log('Done');
 		ranking.sort(function(a,b){
 			return b.Points - a.Points;
 		});
-		console.log(ranking);
 		res.send(ranking);
 		res.end();
 	});
