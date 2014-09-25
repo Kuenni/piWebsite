@@ -26,4 +26,19 @@ angular.module('overview', []).controller('ranking', [ '$scope','$http', functio
 			alert('Fehler beim Laden der Benutzertabelle!');
 		});
 	};
+} ]).controller('userRankingOld', [ '$scope','$http', function($scope,$http) {
+	$scope.getUserRanking = function(){
+		$http({
+			method:'GET',
+			url:'/database/userRanking'
+		}).success(function(data,status,header,config){
+			data.forEach(function(user){
+				user.Points -= 2*user.Correct;
+				user.Points -= 3*user.Difference;
+			});
+			$scope.Users = data;
+		}).error(function(data,status,header,config){
+			alert('Fehler beim Laden der Benutzertabelle!');
+		});
+	};
 } ]);
