@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="overview">
+<html lang="en" ng-app="overview">
   <head>
     <title><%= title %></title>
     
@@ -8,7 +8,7 @@
     <script src="js/angular-route.js"></script>
     <script src="js/overview.js"></script>
     <link rel='stylesheet' href='/stylesheets/style.css' />
-    
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
   </head>
   <body>
   	<div id="nav">
@@ -20,15 +20,18 @@
   	</div>
     <h1><%= title %></h1>
     <p>&Uuml;bersicht der Tippspielergebnisse</p>
-					<div id="content" ng-controller="ranking" ng-init="getRanking()">
-			    	<table>
+    <div class="container">
+    	<div class="row">
+    		<div class="col-md-4">
+				<div ng-controller="ranking" ng-init="getRanking()" style="display: inline">
+			    	<table style="float:left" style="padding: 20px">
 			    		<tr>
 			    			<th><b>Team</b></th>
 			    			<th><b>Punkte</b></th>
 			    			<th><b>Spiele</b></th>
-			    			<th><b>S</b></th>
-			    			<th><b>U</b></th>
-			    			<th><b>N</b></th>
+			    			<th><b> S </b></th>
+			    			<th><b> U </b></th>
+			    			<th><b> N </b></th>
 			    		</tr>
 			    		<tr ng-repeat="team in Teams">
 			    			<td>{{team.Team}}</td>
@@ -39,6 +42,31 @@
 			    			<td id="centerdData">{{team.N}}</td>
 			    		</tr>
 			    	</table>
+			    	</div>
+			 </div>
+			 <div class="col-md-4">
+			    	<div ng-controller="userRanking" ng-init="getUserRanking()" style="display: inline">
+			    	<table style="float:left">
+			    		<tr>
+			    			<th><b>User</b></th>
+			    			<th><b>Punkte</b></th>
+			    			<th><b>Korrekt</b></th>
+			    			<th><b>Differenz</b></th>
+			    			<th><b>Tendenz</b></th>
+			    			<th><b>Falsch</b></th>
+			    		</tr>
+			    		<tr ng-repeat="user in Users">
+			    			<td>{{user.User}}</td>
+			    			<td id="centerdData">{{user.Points}}</td>
+			    			<td id="centerdData">{{user.Correct}}</td>
+			    			<td id="centerdData">{{user.Difference}}</td>
+			    			<td id="centerdData">{{user.Tendency}}</td>
+			    			<td id="centerdData">{{user.Wrong}}</td>
+			    		</tr>
+			    	</table>
+			    	</div>
+			    </div>
+			    </div>
 			    </div>
   </body>
 </html>
