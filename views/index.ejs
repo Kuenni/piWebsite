@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="overview">
   <head>
-    <title><%= title %></title>
+    <title>Bundesligatippspiel</title>
     
     <script src="js/jquery.min.js"></script>
     <script src="js/angular.js"></script>
@@ -18,20 +18,20 @@
   			<li><a href="ergebnisse">Ergebnisse</a></li>
   		</ul>
   	</div>
-    <h1><%= title %></h1>
-    <p>&Uuml;bersicht der Tippspielergebnisse</p>
+    <h1 align="center">Bundesligatippspiel</h1>
     <div class="container">
     	<div class="row">
     		<div class="col-md-4">
+    			<h3 align="center">Tabelle</h3>
 				<div ng-controller="ranking" ng-init="getRanking()" style="display: inline">
 			    	<table style="float:left" style="padding: 20px">
 			    		<tr>
-			    			<th><b>Team</b></th>
-			    			<th><b>Punkte</b></th>
-			    			<th><b>Spiele</b></th>
-			    			<th><b> S </b></th>
-			    			<th><b> U </b></th>
-			    			<th><b> N </b></th>
+			    			<th style="padding: 5px"><b>Team</b></th>
+			    			<th style="padding: 5px"><b>Punkte</b></th>
+			    			<th style="padding: 5px"><b>Spiele</b></th>
+			    			<th style="padding: 5px"><b> S </b></th>
+			    			<th style="padding: 5px"><b> U </b></th>
+			    			<th style="padding: 5px"><b> N </b></th>
 			    		</tr>
 			    		<tr ng-repeat="team in Teams">
 			    			<td>{{team.Team}}</td>
@@ -45,15 +45,16 @@
 			    	</div>
 			 </div>
 			 <div class="col-md-4">
+			 	<h3 align="center">Bestenliste (neue Rechnung)</h3>
 			    	<div ng-controller="userRanking" ng-init="getUserRanking()" style="display: inline">
 			    	<table style="float:left">
 			    		<tr>
-			    			<th><b>User</b></th>
-			    			<th><b>Punkte</b></th>
-			    			<th><b>Korrekt</b></th>
-			    			<th><b>Differenz</b></th>
-			    			<th><b>Tendenz</b></th>
-			    			<th><b>Falsch</b></th>
+			    			<th style="padding: 5px"><b>User</b></th>
+			    			<th style="padding: 5px"><b>Punkte</b></th>
+			    			<th style="padding: 5px"><b>Korrekt</b></th>
+			    			<th style="padding: 5px"><b>Differenz</b></th>
+			    			<th style="padding: 5px"><b>Tendenz</b></th>
+			    			<th style="padding: 5px"><b>Falsch</b></th>
 			    		</tr>
 			    		<tr ng-repeat="user in Users">
 			    			<td>{{user.User}}</td>
