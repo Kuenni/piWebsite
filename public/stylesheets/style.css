@@ -1,20 +1,6 @@
 body {
-  padding: 5px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   background-color: #DDD;
-}
-
-#content {
-	border: 10px groove #9ACD32;
-	border-radius: 10px 10px 10px 10px;
-	background: white;
-}
-
-#nav{
-	width: 50%;
-	height:30px;
-    background-color: #DDD;
-    padding: 20px;
 }
 
 #nav ul {
@@ -44,18 +30,9 @@ body {
 	text-align: center;
 }
 
-table{
-	border-collapse: collapse;
-	width: 500px;
-}
-
 th{
 	text-align: center;
 	background-color: #7CFC00;
-}
-
-table,th,td{
-	border: 1px solid black
 }
 
 tr:nth-child(even) {
