@@ -10,8 +10,13 @@ angular.module('app', []).controller('spieltage', [ '$scope','$http', function($
 	});
 	$scope.users = [{name:"Kuenni",uid:1},{name:"Waldi",uid:2}];
 	$scope.userItem = $scope.users[0];
-	$scope.printSelectedSpieltag = function(){
-		var tag = $scope.selectItem.SpieltagNr;
+	$scope.printSelectedSpieltag = function(t){
+		var tag;
+		if(t){
+			tag = t;
+		} else{
+			tag = $scope.selectItem.SpieltagNr;	
+		}
 		var user = $scope.userItem.name;
 		var userTipps = [];
 		$http({
@@ -65,10 +70,15 @@ angular.module('app', []).controller('spieltage', [ '$scope','$http', function($
 		$scope.selectItem = j[0];
 		$scope.$apply();
 	});
-	$scope.printSelectedSpieltag = function(){
+	$scope.printSelectedSpieltag = function(t){
+		var tag;
+		if(t){
+			tag = t;
+		} else{
+			tag = $scope.selectItem.SpieltagNr;	
+		}
 		var spiele = [];
-		var tag = $scope.selectItem.SpieltagNr;
-		
+		 
 		$http({method:'POST',url:'/database/spieltag',data:{spieltag:tag}}).success(function(data,status,header,config){
 			spiele=data;
 			if(spiele.length === 0){
