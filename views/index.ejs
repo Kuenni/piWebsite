@@ -49,10 +49,10 @@
 						</table>
 					</div>
 				</div>
-				<div class="col-md-4">
+				<div class="col-md-4" align="center">
 					<h3 align="center">Bestenliste (neue Rechnung)</h3>
 					<div ng-controller="userRanking" ng-init="getUserRanking()">
-						<table style="float:left">
+						<table>
 							<tr>
 								<th style="padding: 5px"><b>User</b></th>
 								<th style="padding: 5px"><b>Punkte</b></th>
@@ -71,15 +71,13 @@
 							</tr>
 						</table>
 					</div>
-					<div style="padding: 50px"></div>
-					<h3 align="center" style="padding-top: 50px">Bestenliste ( Platzhalter alte Rechnung)</h3>
-					<div ng-controller="userRanking" ng-init="getUserRanking()">
-						<table style="float:left">
+					<h3 align="center" style="padding-top: 50px">Bestenliste (alte Rechnung)</h3>
+					<div ng-controller="userRankingOld" ng-init="getUserRanking()" align="center">
+						<table>
 							<tr>
 								<th style="padding: 5px"><b>User</b></th>
 								<th style="padding: 5px"><b>Punkte</b></th>
 								<th style="padding: 5px"><b>Korrekt</b></th>
-								<th style="padding: 5px"><b>Differenz</b></th>
 								<th style="padding: 5px"><b>Tendenz</b></th>
 								<th style="padding: 5px"><b>Falsch</b></th>
 							</tr>
@@ -87,7 +85,6 @@
 								<td>{{user.User}}</td>
 								<td id="centerdData">{{user.Points}}</td>
 								<td id="centerdData">{{user.Correct}}</td>
-								<td id="centerdData">{{user.Difference}}</td>
 								<td id="centerdData">{{user.Tendency}}</td>
 								<td id="centerdData">{{user.Wrong}}</td>
 							</tr>

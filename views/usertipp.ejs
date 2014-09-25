@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html ng-app="app">
 	<head>
-		<title><%= title %></title>
+		<title>Tippabgabe</title>
 
 		<script src="js/jquery.min.js"></script>
 		<script src="js/angular.js"></script>
@@ -25,10 +25,8 @@
 				</li>
 			</ul>
 		</div>
-		<h1><%= title %></h1>
-		<p>
-			Welcome to <%= title %>
-		</p>
+		<h1 align="center">Bundesligatippspiel</h1>
+		<h3 align="center">Tippabgabe</h3>
 		<div align="center" id="content" ng-controller="spieltage">
 			Spieltag:
 			<br>
@@ -44,13 +42,13 @@
 			ng-click="printSelectedSpieltag(spieltag.SpieltagNr)"></select>
 			<table>
 				<tr>
-					<th style="padding: 5px"><b>Heim</b></th>
-					<th style="padding: 5px"><b>Gast</b></th>
-					<th style="padding: 5px"><b>Tipp</b></th>
+					<th align="center" style="padding: 5px"><b>Heim</b></th>
+					<th align="center" style="padding: 5px"><b>Gast</b></th>
+					<th align="center" style="padding: 5px"><b>Tipp</b></th>
 				</tr>
 				<tr ng-repeat="t in userTipps">
-					<td>{{t.Heim}}</td>
-					<td>{{t.Gast}}</td>
+					<td style="padding-left: 10px" style="padding-right: 10px">{{t.Heim}}</td>
+					<td style="padding-left: 10px" style="padding-right: 10px">{{t.Gast}}</td>
 					<td align='center'>
 					<input type="text" style="width: 15px" ng-model="t.ToreHeim"/>
 					<b> : </b>
