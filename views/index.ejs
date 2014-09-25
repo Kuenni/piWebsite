@@ -1,73 +1,100 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="overview">
-  <head>
-    <title>Bundesligatippspiel</title>
-    
-    <script src="js/jquery.min.js"></script>
-    <script src="js/angular.js"></script>
-    <script src="js/angular-route.js"></script>
-    <script src="js/overview.js"></script>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-    <link rel="stylesheet" href="css/bootstrap.min.css" />
-  </head>
-  <body>
-  	<div id="nav">
-  		<ul>
-  			<li><a href="/">&Uuml;bersicht</a></li>
-  			<li><a href="usertipp">Tippen</a></li>
-  			<li><a href="ergebnisse">Ergebnisse</a></li>
-  		</ul>
-  	</div>
-    <h1 align="center">Bundesligatippspiel</h1>
-    <div class="container">
-    	<div class="row">
-    		<div class="col-md-4">
-    			<h3 align="center">Tabelle</h3>
-				<div ng-controller="ranking" ng-init="getRanking()" style="display: inline">
-			    	<table style="float:left" style="padding: 20px">
-			    		<tr>
-			    			<th style="padding: 5px"><b>Team</b></th>
-			    			<th style="padding: 5px"><b>Punkte</b></th>
-			    			<th style="padding: 5px"><b>Spiele</b></th>
-			    			<th style="padding: 5px"><b> S </b></th>
-			    			<th style="padding: 5px"><b> U </b></th>
-			    			<th style="padding: 5px"><b> N </b></th>
-			    		</tr>
-			    		<tr ng-repeat="team in Teams">
-			    			<td>{{team.Team}}</td>
-			    			<td id="centerdData">{{team.Points}}</td>
-			    			<td id="centerdData">{{team.Played}}</td>
-			    			<td id="centerdData">{{team.S}}</td>
-			    			<td id="centerdData">{{team.U}}</td>
-			    			<td id="centerdData">{{team.N}}</td>
-			    		</tr>
-			    	</table>
-			    	</div>
-			 </div>
-			 <div class="col-md-4">
-			 	<h3 align="center">Bestenliste (neue Rechnung)</h3>
-			    	<div ng-controller="userRanking" ng-init="getUserRanking()" style="display: inline">
-			    	<table style="float:left">
-			    		<tr>
-			    			<th style="padding: 5px"><b>User</b></th>
-			    			<th style="padding: 5px"><b>Punkte</b></th>
-			    			<th style="padding: 5px"><b>Korrekt</b></th>
-			    			<th style="padding: 5px"><b>Differenz</b></th>
-			    			<th style="padding: 5px"><b>Tendenz</b></th>
-			    			<th style="padding: 5px"><b>Falsch</b></th>
-			    		</tr>
-			    		<tr ng-repeat="user in Users">
-			    			<td>{{user.User}}</td>
-			    			<td id="centerdData">{{user.Points}}</td>
-			    			<td id="centerdData">{{user.Correct}}</td>
-			    			<td id="centerdData">{{user.Difference}}</td>
-			    			<td id="centerdData">{{user.Tendency}}</td>
-			    			<td id="centerdData">{{user.Wrong}}</td>
-			    		</tr>
-			    	</table>
-			    	</div>
-			    </div>
-			    </div>
-			    </div>
-  </body>
+	<head>
+		<title>Bundesligatippspiel</title>
+		<script src="js/jquery.min.js"></script>
+		<script src="js/angular.js"></script>
+		<script src="js/angular-route.js"></script>
+		<script src="js/overview.js"></script>
+		<link rel='stylesheet' href='/stylesheets/style.css' />
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+	</head>
+	<body>
+		<div id="nav">
+			<ul>
+				<li>
+					<a href="/">&Uuml;bersicht</a>
+				</li>
+				<li>
+					<a href="usertipp">Tippen</a>
+				</li>
+				<li>
+					<a href="ergebnisse">Ergebnisse</a>
+				</li>
+			</ul>
+		</div>
+		<h1 align="center">Bundesligatippspiel</h1>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4">
+					<h3 align="center">Tabelle</h3>
+					<div ng-controller="ranking" ng-init="getRanking()">
+						<table style="float:left" style="padding: 20px">
+							<tr>
+								<th style="padding: 5px"><b>Team</b></th>
+								<th style="padding: 5px"><b>Punkte</b></th>
+								<th style="padding: 5px"><b>Spiele</b></th>
+								<th style="padding: 5px"><b> S </b></th>
+								<th style="padding: 5px"><b> U </b></th>
+								<th style="padding: 5px"><b> N </b></th>
+							</tr>
+							<tr ng-repeat="team in Teams">
+								<td>{{team.Team}}</td>
+								<td id="centerdData">{{team.Points}}</td>
+								<td id="centerdData">{{team.Played}}</td>
+								<td id="centerdData">{{team.S}}</td>
+								<td id="centerdData">{{team.U}}</td>
+								<td id="centerdData">{{team.N}}</td>
+							</tr>
+						</table>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<h3 align="center">Bestenliste (neue Rechnung)</h3>
+					<div ng-controller="userRanking" ng-init="getUserRanking()">
+						<table style="float:left">
+							<tr>
+								<th style="padding: 5px"><b>User</b></th>
+								<th style="padding: 5px"><b>Punkte</b></th>
+								<th style="padding: 5px"><b>Korrekt</b></th>
+								<th style="padding: 5px"><b>Differenz</b></th>
+								<th style="padding: 5px"><b>Tendenz</b></th>
+								<th style="padding: 5px"><b>Falsch</b></th>
+							</tr>
+							<tr ng-repeat="user in Users">
+								<td>{{user.User}}</td>
+								<td id="centerdData">{{user.Points}}</td>
+								<td id="centerdData">{{user.Correct}}</td>
+								<td id="centerdData">{{user.Difference}}</td>
+								<td id="centerdData">{{user.Tendency}}</td>
+								<td id="centerdData">{{user.Wrong}}</td>
+							</tr>
+						</table>
+					</div>
+					<div style="padding: 50px"></div>
+					<h3 align="center" style="padding-top: 50px">Bestenliste ( Platzhalter alte Rechnung)</h3>
+					<div ng-controller="userRanking" ng-init="getUserRanking()">
+						<table style="float:left">
+							<tr>
+								<th style="padding: 5px"><b>User</b></th>
+								<th style="padding: 5px"><b>Punkte</b></th>
+								<th style="padding: 5px"><b>Korrekt</b></th>
+								<th style="padding: 5px"><b>Differenz</b></th>
+								<th style="padding: 5px"><b>Tendenz</b></th>
+								<th style="padding: 5px"><b>Falsch</b></th>
+							</tr>
+							<tr ng-repeat="user in Users">
+								<td>{{user.User}}</td>
+								<td id="centerdData">{{user.Points}}</td>
+								<td id="centerdData">{{user.Correct}}</td>
+								<td id="centerdData">{{user.Difference}}</td>
+								<td id="centerdData">{{user.Tendency}}</td>
+								<td id="centerdData">{{user.Wrong}}</td>
+							</tr>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
 </html>
