@@ -136,7 +136,6 @@ function getPointsForTeam(err,callback,team,ranking){
 					N:n,
 					Played:gamesPlayed
 				});
-				console.log("inside getPointsForTeam");
 				callback(null,ranking);
 			});//end callback for all games
 }
@@ -184,14 +183,11 @@ function createRanking(callback){
 		var asyncCalls = [];
 		rows.forEach(function(team){
 			asyncCalls.push(function(callback){
-				console.log("Pushing ranking functions");
 				getPointsForTeam(err,callback,team,ranking);
 			});
 		});//end callback for all teams
-		console.log("Now run ranking in parallel");
 		async.parallel(asyncCalls,function(err,results){
 			if (err) return callback(err);
-			console.log("Now return the ranking");
 			return callback(null,ranking);
 		});
 
