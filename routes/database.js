@@ -269,8 +269,6 @@ function getRankingForUser(err, callback, user, ranking){
 				Tendency:nTendency,
 				Wrong:nWrong
 			});
-			console.log("Inside getRankingForUser");
-			console.log(ranking[ranking.length - 1]);
 			return callback(null,ranking);
 	});//End callback for users
 }
@@ -284,16 +282,12 @@ function createUserRanking(callback){
 			console.log("Error on distinct user");
 			return err;
 		}
-		console.log(rows);
 		if(rows.length && rows[0]){
 			rows.forEach(function(row){
 				asyncCalls.push(function(cb){
-					console.log("pushing function call");
 					getRankingForUser(err,cb,row[0],ranking);
 				});
 			});
-//			}
-			console.log("now run parallel");
 			async.parallel(asyncCalls,function(err,results){
 				if(err){
 					console.log("Error in async calls");
@@ -320,8 +314,6 @@ router.get('/userRanking',function(req,res){
 		ranking.sort(function(a,b){
 			return b.Points - a.Points;
 		});
-		console.log("Sending results");
-		console.log(ranking);
 		res.send(ranking);
 		res.end();
 	});
