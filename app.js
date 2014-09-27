@@ -11,6 +11,7 @@ var spieltage = require('./routes/spieltage');
 var database = require('./routes/database');
 var ergebnisse = require('./routes/ergebnisse');
 var usertipp = require('./routes/usertipp');
+var livingroom = require('./routes/livingroom');
 
 var app = express();
 
@@ -31,6 +32,7 @@ app.use('/users', users);
 app.use('/database',database);
 app.use('/ergebnisse',ergebnisse);
 app.use('/usertipp',usertipp);
+app.use('/livingroom',livingroom);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
