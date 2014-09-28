@@ -7,6 +7,7 @@
 		<script src="js/angular.js"></script>
 		<script src="js/angular-route.js"></script>
 		<script src="js/app.js"></script>
+		<script src="js/bootstrap.min.js"></script>
 		<link rel='stylesheet' href='/stylesheets/style.css' />
 		<link rel="stylesheet" href="css/bootstrap.min.css" />
 
@@ -43,6 +44,7 @@
 			<select ng-model='userItem'
 			ng-options="user.name for user in users"
 			ng-click="printSelectedSpieltag(spieltag.SpieltagNr)"></select>
+			<div style="padding: 15px"></div>
 			<table>
 				<tr>
 					<th align="center" style="padding: 5px"><b>Heim</b></th>
@@ -59,9 +61,37 @@
 					</td>
 				</tr>
 			</table>
-			<button type="button" class="btn btn-success" ng-click="fillTable()">
+			<div style="padding: 15px"></div>
+			<button class="btn btn-success btn-lg" data-toggle="modal" data-target="#myModal">
 				Abschicken
 			</button>
+			<div id="myModal" class="modal fade">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+								&times;
+							</button>
+							<h4 class="modal-title">Speichern?</h4>
+						</div>
+						<div class="modal-body">
+							<p>
+								Ist der richtige Benutzer ausgew&auml;hlt?<br>
+								Aktuell ausgew&auml;hlt:
+								<div class="alert alert-warning" role="alert">{{userItem.name}}</div>
+							</p>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-danger" data-dismiss="modal">
+								Verwerfen
+							</button>
+							<button type="button" class="btn btn-success" ng-click="fillTable()" data-dismiss="modal">
+								Speichern
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 	</body>
 </html>
