@@ -34,7 +34,8 @@ angular.module('overview', []).controller('ranking', [ '$scope','$http', functio
 		}).success(function(data,status,header,config){
 			data.forEach(function(user){
 				user.Points -= 2*user.Correct;
-				user.Points -= 3*user.Difference;
+				user.Points -= 2*user.Difference;
+				user.Tendency += user.Difference;
 			});
 			$scope.Users = data;
 		}).error(function(data,status,header,config){
