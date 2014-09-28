@@ -219,7 +219,7 @@ function getRankingForUser(err, callback, user, ranking){
 	db.query('SELECT ergebnisse.heim, ergebnisse.gast, ergebnisse.toreHeim, ergebnisse.toreGast,\
 		usertipps.toreheim, usertipps.toregast FROM ergebnisse\
 		INNER JOIN userTipps ON userTipps.Heim = ergebnisse.Heim\
-		WHERE usertipps.User=:User',
+		WHERE usertipps.User=:User AND ergebnisse.Gast = usertipps.Gast',
 		{
 			User:user
 		},{
