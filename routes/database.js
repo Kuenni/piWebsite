@@ -217,56 +217,56 @@ function getRankingForUser(err, callback, user, ranking){
 	var nTendency = 0;
 	var nWrong = 0;
 	db.query('SELECT ergebnisse.heim, ergebnisse.gast, ergebnisse.toreHeim, ergebnisse.toreGast,\
-		usertipps.toreheim, usertipps.toregast FROM ergebnisse\
-		INNER JOIN userTipps ON userTipps.Heim = ergebnisse.Heim\
-		WHERE usertipps.User=:User AND ergebnisse.Gast = usertipps.Gast',
-		{
-			User:user
-		},{
-			Home:String,
-			Guest:String,
-			goalsHome:Number,
-			goalsGuest:Number,
-		betHome:Number,
-		betGuest:Number
-		},function(err,rows){
-			if(err){
-				console.log('GetAllResults Error');
-				return callback(err);
-			}
-			rows.forEach(function(Game){
-				var pointsForGame = getUserPoints(Game.betHome, Game.betGuest,
-						Game.goalsHome, Game.goalsGuest);
-				switch (pointsForGame) {
-				case 5:
-					nCorrect++;
-					break;
-				case 3:
-					nDiffernece++;
-					break;
-				case 1:
-					nTendency++;
-					break;
-				case 0:
-					nWrong++;
-					break;
-				default:
-					break;
+			usertipps.toreheim, usertipps.toregast FROM ergebnisse\
+			INNER JOIN userTipps ON userTipps.Heim = ergebnisse.Heim\
+			WHERE usertipps.User=:User AND ergebnisse.Gast = usertipps.Gast',
+			{
+				User:user
+			},{
+				Home:String,
+				Guest:String,
+				goalsHome:Number,
+				goalsGuest:Number,
+				betHome:Number,
+				betGuest:Number
+			},function(err,rows){
+				if(err){
+					console.log('GetAllResults Error');
+					return callback(err);
 				}
-				if(pointsForGame != -1){
-					points += pointsForGame;
-				}
-			});
-			ranking.push({
-				User:user,
-				Points:points,
-				Correct:nCorrect,
-				Difference:nDiffernece,
-				Tendency:nTendency,
-				Wrong:nWrong
-			});
-			return callback(null,ranking);
-	});//End callback for users
+				rows.forEach(function(Game){
+					var pointsForGame = getUserPoints(Game.betHome, Game.betGuest,
+							Game.goalsHome, Game.goalsGuest);
+					switch (pointsForGame) {
+					case 5:
+						nCorrect++;
+						break;
+					case 3:
+						nDiffernece++;
+						break;
+					case 1:
+						nTendency++;
+						break;
+					case 0:
+						nWrong++;
+						break;
+					default:
+						break;
+					}
+					if(pointsForGame != -1){
+						points += pointsForGame;
+					}
+				});
+				ranking.push({
+					User:user,
+					Points:points,
+					Correct:nCorrect,
+					Difference:nDiffernece,
+					Tendency:nTendency,
+					Wrong:nWrong
+				});
+				return callback(null,ranking);
+			});//End callback for users
 }
 
 function createUserRanking(callback){
@@ -408,14 +408,16 @@ router.post('/',function(req,res){
 					Heim:Spiel.Heim
 				});
 			} else{
-				db.query('INSERT INTO Ergebnisse (Spieltag,Heim,Gast,ToreHeim,ToreGast) \
-						VALUES(:Tag,:Heim,:Gast,:ToreHeim,:ToreGast)',{
-							Tag:Spiel.Tag,
-							Heim:Spiel.Heim,
-							Gast:Spiel.Gast,
-							ToreHeim:Spiel.ToreHeim,
-							ToreGast:Spiel.ToreGast
-						});
+				if( !( (Spiel.ToreHeim == '-1') || (Spiel.ToreGast == '-1') ) ){
+					db.query('INSERT INTO Ergebnisse (Spieltag,Heim,Gast,ToreHeim,ToreGast) \
+							VALUES(:Tag,:Heim,:Gast,:ToreHeim,:ToreGast)',{
+								Tag:Spiel.Tag,
+								Heim:Spiel.Heim,
+								Gast:Spiel.Gast,
+								ToreHeim:Spiel.ToreHeim,
+								ToreGast:Spiel.ToreGast
+							});
+				}
 			}
 		});
 	});
