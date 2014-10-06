@@ -87,8 +87,8 @@ angular.module('app', []).controller('spieltage', [ '$scope','$http', function($
 					spiele.push({
 						Heim:Spiel.Heim,
 						Gast:Spiel.Gast,
-						ToreHeim:'-',
-						ToreGast:'-'
+						ToreHeim:'-1',
+						ToreGast:'-1'
 					});
 				});
 			}
