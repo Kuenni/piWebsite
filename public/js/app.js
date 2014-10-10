@@ -78,23 +78,29 @@ angular.module('app', []).controller('spieltage', [ '$scope','$http', function($
 			tag = $scope.selectItem.SpieltagNr;	
 		}
 		var spiele = [];
-		 
+
 		$http({method:'POST',url:'/database/spieltag',data:{spieltag:tag}}).success(function(data,status,header,config){
 			spiele=data;
-			if(spiele.length === 0){
-				spieleArray = $scope.spieltageJson[Number(tag) - 1].Spiele;
-				spieleArray.forEach(function(Spiel){
+			spieleArray = $scope.spieltageJson[Number(tag) - 1].Spiele;
+			spieleArray.forEach(function(Spiel){
+				var gameExists = false;
+				for (var i = 0; i < spiele.length; i++) {
+					if( Spiel.Heim == spiele[i].Heim ){
+						gameExists = true;
+					}
+				}
+				if(!gameExists){
 					spiele.push({
 						Heim:Spiel.Heim,
 						Gast:Spiel.Gast,
 						ToreHeim:'-1',
 						ToreGast:'-1'
 					});
-				});
-			}
+				}
+			});
 			$scope.spiele = spiele;
 		});
-		
+
 	};
 	$scope.fillTable = function(){
 		var tag = $scope.selectItem.SpieltagNr;
@@ -110,17 +116,17 @@ angular.module('app', []).controller('spieltage', [ '$scope','$http', function($
 					});
 		});
 		$.ajax ({
-		    url: 'database',
-		    type: "POST",
-		    contentType: "application/json; charset=utf-8",
-		    dataType: "json",
-		    data: JSON.stringify(tableData),
-		    success: function(){
-		    	alert("Eingetragen!");
-		    },
-		    error: function(){
-		    	alert('Datenbankeintrag fehlgeschlagen!');
-		    }
+			url: 'database',
+			type: "POST",
+			contentType: "application/json; charset=utf-8",
+			dataType: "json",
+			data: JSON.stringify(tableData),
+			success: function(){
+				alert("Eingetragen!");
+			},
+			error: function(){
+				alert('Datenbankeintrag fehlgeschlagen!');
+			}
 		});
 	};
 } ]);
