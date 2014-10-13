@@ -33,7 +33,7 @@
 			<br>
 			<select ng-model="selectItem"
 			ng-options="(spieltag.SpieltagNr + '. Spieltag') for spieltag in spieltageJson"
-			ng-touch="printSelectedSpieltag(spieltag.SpieltagNr)"
+			ng-click="printSelectedSpieltag(spieltag.SpieltagNr)"
 			ng-init="printSelectedSpieltag(1)"></select>
 			<table>
 				<tr>
