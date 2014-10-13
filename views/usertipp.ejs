@@ -36,14 +36,14 @@
 			<br>
 			<select ng-model="selectItem"
 			ng-options="(spieltag.SpieltagNr + '. Spieltag') for spieltag in spieltageJson"
-			ng-click="printSelectedSpieltag(spieltag.SpieltagNr)"
+			ng-touch="printSelectedSpieltag(spieltag.SpieltagNr)"
 			ng-init="printSelectedSpieltag(1)"></select>
 			<br>
 			Spieler:
 			<br>
 			<select ng-model='userItem'
 			ng-options="user.name for user in users"
-			ng-click="printSelectedSpieltag(spieltag.SpieltagNr)"></select>
+			ng-touch="printSelectedSpieltag(spieltag.SpieltagNr)"></select>
 			<div style="padding: 15px"></div>
 			<table>
 				<tr>
@@ -55,9 +55,9 @@
 					<td style="padding-left: 10px" style="padding-right: 10px">{{t.Heim}}</td>
 					<td style="padding-left: 10px" style="padding-right: 10px">{{t.Gast}}</td>
 					<td align='center'>
-					<input type="text" style="width: 20px" ng-model="t.ToreHeim"/>
+					<input type="text" style="width: 25px" ng-model="t.ToreHeim"/>
 					<b> : </b>
-					<input type="text" style="width: 20px" ng-model='t.ToreGast'/>
+					<input type="text" style="width: 25px" ng-model='t.ToreGast'/>
 					</td>
 				</tr>
 			</table>
