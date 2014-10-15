@@ -2,7 +2,6 @@
 <html ng-app="app">
 	<head>
 		<title>Tippabgabe</title>
-
 		<script src="js/jquery.min.js"></script>
 		<script src="js/angular.js"></script>
 		<script src="js/angular-route.js"></script>
@@ -37,12 +36,14 @@
 			<select ng-model="selectItem"
 			ng-options="(spieltag.SpieltagNr + '. Spieltag') for spieltag in spieltageJson"
 			ng-click="printSelectedSpieltag(spieltag.SpieltagNr)"
+			ng-change="printSelectedSpieltag(spieltag.SpieltagNr)"
 			ng-init="printSelectedSpieltag(1)"></select>
 			<br>
 			Spieler:
 			<br>
 			<select ng-model='userItem'
 			ng-options="user.name for user in users"
+			ng-change="printSelectedSpieltag(spieltag.SpieltagNr)"
 			ng-click="printSelectedSpieltag(spieltag.SpieltagNr)"></select>
 			<div style="padding: 15px"></div>
 			<table>

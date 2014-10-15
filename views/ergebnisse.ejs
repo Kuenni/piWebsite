@@ -2,9 +2,11 @@
 <html ng-app="app">
 	<head>
 		<title>Ergebnisse</title>
-		<script src="/js/jquery.min.js"></script>
-		<script src="/js/angular.min.js"></script>
-		<script src="/js/app.js"></script>
+		<script src="js/jquery.min.js"></script>
+		<script src="js/angular.js"></script>
+		<script src="js/angular-route.js"></script>
+		<script src="js/app.js"></script>
+		<script src="js/bootstrap.min.js"></script>
 		<link rel='stylesheet' href='/stylesheets/style.css' />
 		<link rel="stylesheet" href="css/bootstrap.min.css" />
 
@@ -34,7 +36,10 @@
 			<select ng-model="selectItem"
 			ng-options="(spieltag.SpieltagNr + '. Spieltag') for spieltag in spieltageJson"
 			ng-click="printSelectedSpieltag(spieltag.SpieltagNr)"
-			ng-init="printSelectedSpieltag(1)"></select>
+			ng-init="printSelectedSpieltag(1)"
+			ng-change="printSelectedSpieltag(spieltag.SpieltagNr)"
+			>
+			</select>
 			<table>
 				<tr>
 					<th style="padding: 5px"><b>Heim</b></th>

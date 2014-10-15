@@ -81,6 +81,8 @@ angular.module('app', []).controller('spieltage', [ '$scope','$http', function($
 
 		$http({method:'POST',url:'/database/spieltag',data:{spieltag:tag}}).success(function(data,status,header,config){
 			spiele=data;
+			if(!$scope.spieltageJson)
+				return;
 			spieleArray = $scope.spieltageJson[Number(tag) - 1].Spiele;
 			spieleArray.forEach(function(Spiel){
 				var gameExists = false;
