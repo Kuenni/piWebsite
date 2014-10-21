@@ -234,9 +234,9 @@ function getRankingForUser(err, callback, user, ranking){
 					console.log('GetAllResults Error');
 					return callback(err);
 				}
-				rows.forEach(function(Game){
-					var pointsForGame = getUserPoints(Game.betHome, Game.betGuest,
-							Game.goalsHome, Game.goalsGuest);
+				rows.forEach(function(game){
+					var pointsForGame = getUserPoints(game.betHome, game.betGuest,
+							game.goalsHome, game.goalsGuest);
 					switch (pointsForGame) {
 					case 5:
 						nCorrect++;
@@ -446,6 +446,101 @@ router.post('/spieltag',function(req,res){
 		res.send(rows);
 	});
 });
+
+/**
+ * Returns the timeline for the user ranking
+ */
+router.get('/userRankingTimeline',function(req,res){
+	getUserRankingTimeline(function(err,timeline){
+		if(err){
+			console.log("Err in create user ranking timeline");
+			res.status(500).end();
+			return err;
+		}
+		console.log('Waiting');
+		res.send(timeline);
+		console.log(timeline);
+		res.end();
+	});
+});
+
+/**
+ * Loops over all users and creates a timeline of the points over the matchdays
+ * @param callback
+ */
+function getUserRankingTimeline(callback){
+	var timeline = {timeline:[]};
+	var asyncCalls = [];
+	db.query('SELECT DISTINCT User FROM Usertipps',{User:String},
+			function(err,rows){
+		if(err) {
+			console.log("Error on distinct user");
+			return err;
+		}
+		if(rows.length && rows[0]){
+			rows.forEach(function(row){
+				asyncCalls.push(function(cb){
+					createTimelineForUserRanking(cb,row.User,timeline);
+				});
+			});
+			async.parallel(asyncCalls,function(err,results){
+				if(err){
+					console.log("Error in async calls");
+					return callback(err);
+				}
+				return callback(null,timeline);
+			});
+		}
+	});//db query
+}
+
+function createTimelineForUserRanking(callback,user,timeline){
+	var pointsWithTime = [];
+	db.query('SELECT ergebnisse.spieltag, ergebnisse.heim, ergebnisse.gast, ergebnisse.toreHeim, ergebnisse.toreGast,\
+	usertipps.toreheim, usertipps.toregast FROM ergebnisse\
+	INNER JOIN userTipps ON userTipps.Heim = ergebnisse.Heim\
+	WHERE usertipps.User=:User AND ergebnisse.Gast = usertipps.Gast',
+	{
+		User:user
+	},{
+		Matchday:Number,
+		Home:String,
+		Guest:String,
+		goalsHome:Number,
+		goalsGuest:Number,
+		betHome:Number,
+		betGuest:Number
+	},function(err,rows){
+		if(err){
+			console.log("Error in createTimelineForUserRanking");
+			return err;
+		}
+		if(rows.length && rows[0]){
+			var matchday = 0;
+			rows.forEach(function(game){
+				matchday = game.Matchday;
+				var pointsForGame = getUserPoints(game.betHome, game.betGuest,
+						game.goalsHome, game.goalsGuest);
+				if(pointsForGame != -1){
+					if(pointsWithTime[matchday - 1]){
+						pointsWithTime[matchday - 1].pointsSum += pointsForGame;
+					} else {
+						pointsWithTime.push({Day:matchday,pointsSum:pointsForGame});
+					}
+				}
+				
+			});
+			console.log('Now pushing');
+			timeline.timeline.push({
+				User:user,
+				PointsWithTime:pointsWithTime
+			});
+		}
+		console.log('Lets return');
+		return callback(null);
+	}
+	);
+}
 
 /**
  * on toplevel request for the database sublink render the page
