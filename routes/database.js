@@ -523,9 +523,9 @@ function createTimelineForUserRanking(callback,user,timeline){
 						game.goalsHome, game.goalsGuest);
 				if(pointsForGame != -1){
 					if(pointsWithTime[matchday - 1]){
-						pointsWithTime[matchday - 1].pointsSum += pointsForGame;
+						pointsWithTime[matchday - 1].PointsSum += pointsForGame;
 					} else {
-						pointsWithTime.push({Day:matchday,pointsSum:pointsForGame});
+						pointsWithTime.push({Day:matchday,PointsSum:pointsForGame});
 					}
 				}
 				
