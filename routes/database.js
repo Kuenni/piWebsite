@@ -431,6 +431,7 @@ router.post('/',function(req,res){
 });
 
 router.post('/spieltag',function(req,res){
+	console.log("Call to database");
 	var spieltag = req.body.spieltag;
 	db.query('SELECT * FROM Ergebnisse WHERE Spieltag=:Tag',{Tag:spieltag},{
 		Spieltag:Number,
@@ -440,9 +441,11 @@ router.post('/spieltag',function(req,res){
 		ToreGast:Number
 	},function(err,rows){
 		if(err){
+			console.log("Error");
 			console.log(err);
 			return res.status(500).end();
 		}
+		console.log("Sucess");
 		res.send(rows);
 	});
 });
@@ -530,13 +533,11 @@ function createTimelineForUserRanking(callback,user,timeline){
 				}
 				
 			});
-			console.log('Now pushing');
 			timeline.timeline.push({
 				User:user,
 				PointsWithTime:pointsWithTime
 			});
 		}
-		console.log('Lets return');
 		return callback(null);
 	}
 	);
