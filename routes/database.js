@@ -5,7 +5,7 @@
 //Declare variables for modules
 var express = require('express');
 var router = express.Router();
-var dblite = require('dblite');
+var dblite = require('dblite').withSQLite('3.8.6+');
 var util = require('util');
 var fs = require('fs');
 var async = require('async');
@@ -15,18 +15,18 @@ var db = dblite('./data/tipps.sqlite');
 
 //Creates a table for storing game results
 function createResultTableIfNotExist(){
-	db.query('CREATE TABLE if not exists Ergebnisse (Spieltag int,Heim varchar(255),Gast varchar(255),ToreHeim int,ToreGast int)');
+	db.query('CREATE TABLE IF NOT EXISTS Ergebnisse (Spieltag INT,Heim VARCHAR(255),Gast VARCHAR(255),ToreHeim INT,ToreGast INT)');
 };
 
 //Creates a table for storing the user bets 
 function createUserBetTableIfNotExists(){
-	db.query('CREATE TABLE if not exists UserTipps (Spieltag int,User varchar(255),Heim varchar(255),Gast varchar(255),ToreHeim int,ToreGast int)');
+	db.query('CREATE TABLE IF NOT EXISTS UserTipps (Spieltag INT,User VARCHAR(255),Heim VARCHAR(255),Gast VARCHAR(255),ToreHeim INT,ToreGast INT)');
 }
 
 //Creates a table for the team ranking
 //TODO: Do I need this?
 function createRankingTableIfNotExist(){
-	db.query('CREATE TABLE if not exists Rankings (Team varchar(255),Punkte int,S int, U int, N int)');
+	db.query('CREATE TABLE IF NOT EXISTS Rankings (Team VARCHAR(255),Punkte INT,S INT, U INT, N INT)');
 }
 
 //Creates a table to store the team names.
@@ -44,6 +44,7 @@ function createTeamTableIfNotExist(){
 			}
 		});
 		if(!tableExists){
+			console.log('Reading file');
 			fs.readFile('./json/Spieltage.json',function(err,data){
 				var uniques = [];
 				JSON.parse(data).Spieltage.forEach(function(Spieltag){
@@ -52,7 +53,8 @@ function createTeamTableIfNotExist(){
 							uniques.push(Spiel.Heim);
 					});
 				});
-				db.query('CREATE TABLE Teams (Team varchar(255))');
+				console.log('Creating table');
+				db.query('CREATE TABLE Teams (Team VARCHAR(255))');
 				uniques.forEach(function(team){
 					db.query('INSERT INTO Teams (Team) VALUES(:Team)',{Team:team});
 				});
