@@ -12,7 +12,7 @@ function createTimelinePlot(data) {
     var xExtents = d3.extent(data, function (d) { return d[0]; });
     var zDomain = [];
     data.forEach(function(d){
-    	if(zDomain.indexOf(d[2]) == 0)
+    	if(zDomain.indexOf(d[2]) == -1)
     		zDomain.push(d[2]);
     });
 	
@@ -26,7 +26,7 @@ function createTimelinePlot(data) {
 
 	var x = d3.scale.linear()
 	.range([0, width])
-	.domain([0,xExtents[1]]);
+	.domain([0,xExtents[1]+1]);
 
 	var y = d3.scale.linear()
 	.range([height, 0])
@@ -63,32 +63,6 @@ function createTimelinePlot(data) {
 	.attr("dy", ".71em")
 	.style("text-anchor", "end")
 	.text("Punkte");
-	
-	legend = svg.append("g")
-	  .attr("class","legend")
-	  .attr("width", 100)
-      .attr("height", 350)
-	  .attr("transform","translate(" + width/2. + "," + height/2. + ")")
-	  .style("font-size","12px");
-	
-	legend.selectAll('g').data(data)
-	.enter()
-	.append('g')
-	.each(function(d,i){
-		var g = d3.select(this);
-		g.append("cirlce")
-		.attr("r",3.6)
-		.attr("cy",20 + i*10)
-		.attr("cx",20)
-		.attr("fill",z(d[2]))
-	});
-	
-	//  .call(d3.legend);
-	legend.append("text")
-    .attr("x", 24)
-    .attr("y", 9)
-    .attr("dy", ".35em")
-    .text(function(d) { return d; });
 
 	svg.selectAll(".dot")
 	.data(data)
@@ -98,6 +72,31 @@ function createTimelinePlot(data) {
     .attr("cx", function(d) { return x(d[0]); })
     .attr("cy", function(d) { return y(d[1]); })
     .style("fill", function(d) { return z(d[2]); });
+	
+	legend = svg.append("g")
+	  .attr("class","legend")
+	  .attr("width", 100)
+    .attr("height", 50)
+    .attr("x",width-100)
+    .attr("y",height-50)
+	  .style("font-size","12px");
+	
+	legend.selectAll('g').data(zDomain)
+	.enter().append('g')
+	.attr("transform","translate(" + (width - 100) + ",0)")
+	.each(function(d,i){
+		var g = d3.select(this);
+		g.append("circle")
+		.attr("r",3.6)
+		.attr("cy",3.5 + i*15)
+		.attr("cx",3.5)
+		.attr("fill",z(d));
+		g.append("text")
+	    .attr("x", 10.5)
+	    .attr("y", 3.5 + i*15)
+	    .attr("dy", ".35em")
+	    .text(function(d) { return d; });
+	});
 }
 
 angular.module('overview', []).controller('ranking', [ '$scope','$http', function($scope,$http) {
