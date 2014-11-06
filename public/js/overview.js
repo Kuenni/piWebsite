@@ -8,6 +8,13 @@ function createTimelinePlot(data) {
 	width = 960 - margin.left - margin.right,
 	height = 300 - margin.top - margin.bottom;
 
+    var yExtents = d3.extent(data, function (d) { return d[1]; });
+    var xExtents = d3.extent(data, function (d) { return d[0]; });
+    var zDomain = [];
+    data.forEach(function(d){
+    	if(zDomain.indexOf(d[2]) == 0)
+    		zDomain.push(d[2]);
+    });
 	
 	var dataX = [4, 8, 3, 6, 2, 9];
 
@@ -19,12 +26,14 @@ function createTimelinePlot(data) {
 
 	var x = d3.scale.linear()
 	.range([0, width])
-	.domain([0,data.length+1]);
+	.domain([0,xExtents[1]]);
 
 	var y = d3.scale.linear()
 	.range([height, 0])
-	.domain([0,d3.max(data)+1]);
+	.domain([0,yExtents[1]]);
 
+	var z = d3.scale.category10().domain(zDomain);
+	
 	var xAxis = d3.svg.axis()
 	.scale(x)
 	.orient("bottom");
@@ -54,15 +63,41 @@ function createTimelinePlot(data) {
 	.attr("dy", ".71em")
 	.style("text-anchor", "end")
 	.text("Punkte");
+	
+	legend = svg.append("g")
+	  .attr("class","legend")
+	  .attr("width", 100)
+      .attr("height", 350)
+	  .attr("transform","translate(" + width/2. + "," + height/2. + ")")
+	  .style("font-size","12px");
+	
+	legend.selectAll('g').data(data)
+	.enter()
+	.append('g')
+	.each(function(d,i){
+		var g = d3.select(this);
+		g.append("cirlce")
+		.attr("r",3.6)
+		.attr("cy",20 + i*10)
+		.attr("cx",20)
+		.attr("fill",z(d[2]))
+	});
+	
+	//  .call(d3.legend);
+	legend.append("text")
+    .attr("x", 24)
+    .attr("y", 9)
+    .attr("dy", ".35em")
+    .text(function(d) { return d; });
 
 	svg.selectAll(".dot")
 	.data(data)
 	.enter().append("circle")
     .attr("class", "dot")
     .attr("r", 3.5)
-    .attr("cx", function(d,i) { return x(i+1); })
+    .attr("cx", function(d) { return x(d[0]); })
     .attr("cy", function(d) { return y(d[1]); })
-    .style("fill", function(d) { return "red"; });
+    .style("fill", function(d) { return z(d[2]); });
 }
 
 angular.module('overview', []).controller('ranking', [ '$scope','$http', function($scope,$http) {
@@ -121,7 +156,6 @@ angular.module('overview', []).controller('ranking', [ '$scope','$http', functio
 				});
 			});
 			createTimelinePlot(d3Data);
-			console.log(d3Data);
 		}).error(function(data,status,header,config){
 			console.log("Fehler beim erstellen des Punkteverlaufs");
 		});
