@@ -504,7 +504,7 @@ function createTimelineForUserRanking(callback,user,timeline){
 	db.query('SELECT ergebnisse.spieltag, ergebnisse.heim, ergebnisse.gast, ergebnisse.toreHeim, ergebnisse.toreGast,\
 	usertipps.toreheim, usertipps.toregast FROM ergebnisse\
 	INNER JOIN userTipps ON userTipps.Heim = ergebnisse.Heim\
-	WHERE usertipps.User=:User AND ergebnisse.Gast = usertipps.Gast',
+	WHERE usertipps.User=:User AND ergebnisse.Gast = usertipps.Gast order by ergebnisse.spieltag',
 	{
 		User:user
 	},{
