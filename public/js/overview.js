@@ -3,27 +3,26 @@
  */
 
 function createTimelinePlot(data) {
-	console.log("CreateTimelinePlot was called");
 	var margin = {top: 20, right: 20, bottom: 30, left: 40},
 	width = 960 - margin.left - margin.right,
 	height = 300 - margin.top - margin.bottom;
-
-    var yExtents = d3.extent(data, function (d) { return d[1]; });
-    var xExtents = d3.extent(data, function (d) { return d[0]; });
-    var zDomain = [];
-    data.forEach(function(d){
-    	if(zDomain.indexOf(d[2]) == -1)
-    		zDomain.push(d[2]);
-    });
 	
-	var dataX = [4, 8, 3, 6, 2, 9];
+    var yExtents = d3.extent(data.Kuenni, function (d) { return d.points; });
+    var xExtents = d3.extent(data.Kuenni, function (d) { return d.day; });
+    var zDomain = [];
+    
+    yExtents = [0,41];
+    
+    for ( var name in data) {
+    	zDomain.push(name);
+	}
 
 	var svg = d3.select(".chart")
 	.attr("width", width + margin.left + margin.right)
 	.attr("height", height + margin.top + margin.bottom)
 	.append("g")
 	.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-
+	
 	var x = d3.scale.linear()
 	.range([0, width])
 	.domain([0,xExtents[1]+1]);
@@ -64,15 +63,19 @@ function createTimelinePlot(data) {
 	.style("text-anchor", "end")
 	.text("Punkte");
 
-	svg.selectAll(".dot")
-	.data(data)
-	.enter().append("circle")
-    .attr("class", "dot")
-    .attr("r", 3.5)
-    .attr("cx", function(d) { return x(d[0]); })
-    .attr("cy", function(d) { return y(d[1]); })
-    .style("fill", function(d) { return z(d[2]); });
 	
+	for (name in data){
+		svg.append('g').selectAll(".dot")
+		.data(data[name])
+		.enter().append("circle")
+		.attr("class", "dot")
+		.attr("r", 3.5)
+		.attr("cx", function(d) { return x(d.day); })
+		.attr("cy", function(d) { return y(d.points); })
+		.style("fill", function(d) { return z(name); });
+
+	}
+
 	legend = svg.append("g")
 	  .attr("class","legend")
 	  .attr("width", 100)
@@ -97,6 +100,23 @@ function createTimelinePlot(data) {
 	    .attr("dy", ".35em")
 	    .text(function(d) { return d; });
 	});
+	
+	var lineFunction = d3.svg.line()
+	.x(function(d) { return x(d.day); })
+	.y(function(d) { return y(d.points); })
+	.interpolate("linear");
+	
+	
+	for( name in data ){
+		svg.append("g")
+		.append("path")
+		.attr("d",lineFunction(data[name]))
+		.attr("stroke", z(name))
+		.attr("stroke-width", 2)
+		.attr("fill", "none");
+	}
+
+
 }
 
 angular.module('overview', []).controller('ranking', [ '$scope','$http', function($scope,$http) {
@@ -145,13 +165,15 @@ angular.module('overview', []).controller('ranking', [ '$scope','$http', functio
 			method:'GET',
 			url:'/database/userRankingTimeline'
 		}).success(function(data,status,header,config){
-			d3Data = [];
+			d3Data = {};
 			data.timeline.forEach(function(timelineObject){
 				user = timelineObject.User;
+				d3Data[user] = [];
 				timelineObject.PointsWithTime.forEach(function(matchDayObject){
 					day = matchDayObject.Day;
 					points = matchDayObject.PointsSum;
-					d3Data.push([day,points,user]);
+				//	d3Data.push([day,points,user]);
+					d3Data[user].push({"day":day,"points":points});
 				});
 			});
 			createTimelinePlot(d3Data);
