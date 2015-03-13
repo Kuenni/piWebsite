@@ -102,11 +102,9 @@
 						</table>
 					</div>
 				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-12" ng-controller="pointsTimeline" ng-init="getPointsTimeline()">
-					<h3 align="center">Punkteverlauf</h3>
-					<svg class="chart">
+					<div class="col-md-4" ng-controller="resultsHeatMap" ng-init="getResultHeatmap()">
+					<h3 align="center">2D Histogramm der Ergebnisse</h3>
+					<svg class="chart" id="heatmap">
 						<style>
 							.chart div {
 								font: 10px sans-serif;
@@ -120,12 +118,32 @@
 								stroke: #000;
 							}
 						</style>
-						<script>
-			//				createTimelinePlot();
-						</script>
 					</svg>
 				</div>
 			</div>
+			<div class="row">
+				<div class="col-md-12" ng-controller="pointsTimeline" ng-init="getPointsTimeline()">
+					<h3 align="center">Punkteverlauf</h3>
+					<svg class="chart" id="timeline">
+						<style>
+							.chart div {
+								font: 10px sans-serif;
+								background-color: steelblue;
+								text-align: right;
+								padding: 3px;
+								margin: 1px;
+								color: white;
+							}
+							.chart dot {
+								stroke: #000;
+							}
+						</style>
+					</svg>
+				</div>
+				
+			</div>
+			
 		</div>
+		
 	</body>
 </html>

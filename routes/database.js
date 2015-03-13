@@ -546,6 +546,24 @@ function createTimelineForUserRanking(callback,user,timeline){
 }
 
 /**
+ * Returns all results of the matches
+ */
+router.get('/resultList',function(req,res){
+	db.query('SELECT toreheim, toregast FROM Ergebnisse',/*{
+		ToreHeim:Number,
+		ToreGast:Number
+	},*/function(err,rows){
+		if(err){
+			console.log("Error");
+			console.log(err);
+			return res.status(500).end();
+		}
+		console.log("Sucess");
+		res.send(rows);
+	});
+});
+
+/**
  * on toplevel request for the database sublink render the page
  */
 router.get('/', function(req, res) {
